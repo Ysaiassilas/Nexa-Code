@@ -1,103 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NexaCode | Inovação em Tecnologia</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexaCode | Inovação em Tecnologia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="style.css" media="all" />
 </head>
 <body>
-  <header>
-    <div class="logo">Nexa<span>Code</span></div>
+    <header>
+        <div class="logo">Nexa<span>Code</span></div>
 
-    <!-- Botão Dark Mode -->
-    <button id="dark-toggle" aria-label="Alternar modo escuro">
-      🌙
-    </button>
+        <div class="menu-toggle" id="menu-toggle" role="button" aria-expanded="false" aria-controls="nav">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
-    <!-- Menu responsivo -->
-    <div class="menu-toggle" id="menu-toggle">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="#sobre" role="menuitem">Quem Somos</a></li> 
+                <li><a href="#portfolio" role="menuitem">Projetos</a></li> 
+                <li><a href="#servicos" role="menuitem">Serviços</a></li>
+                <li><a href="#contato" role="menuitem">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav id="nav">
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#servicos">Soluções</a></li>
-        <li><a href="#equipe">Equipe</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Nexa<span>Code</span> transformará suas ideias em soluções digitais reais</h1>
+            <p>Com uma equipe apaixonada por tecnologia, criamos sistemas e experiências únicas que conectam inovação e resultado.</p>
+            <p>Desenvolvemos com propósito, unindo design, performance e estratégia para fazer sua empresa ir além.</p>
+        </div>
+    </section>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1 id="typed-text"></h1>
-      <p>Na NexaCode, combinamos tecnologia, criatividade e inovação para levar seu negócio ao próximo nível.</p>
-      <a href="#contato" class="btn">Fale conosco</a>
-    </div>
-  </section>
+    <section id="sobre" class="sobre">
+        <h2>Sobre nós</h2>
+        <div class="sobre-content">
+            <div class="sobre-texto">
+                <p>Somos uma startup focada em desenvolver soluções tecnológicas personalizadas para empresas que desejam se destacar no mercado digital. Nossa equipe combina expertise técnica e visão estratégica para entregar inovação de verdade.</p>
+                <p>Acreditamos que a tecnologia deve servir ao propósito. Por isso, cada projeto é desenvolvido com foco em performance, escalabilidade e, principalmente, no retorno que ele trará para o seu negócio.</p>
+                <a href="#contato" class="btn">Conheça nossa Metodologia</a>
+            </div>
+            
+            <div class="sobre-imagem">
+                <img src="https://via.placeholder.com/500x350/007AFF/FFFFFF?text=Visual+Estratégico" alt="Ilustração de estratégia e tecnologia" loading="lazy" width="500" height="350">
+            </div>
+        </div>
+    </section>
 
-  <section id="sobre" class="sobre">
-    <h2>Sobre nós</h2>
-    <p>Somos uma startup focada em desenvolver soluções tecnológicas personalizadas para empresas que desejam se destacar no mercado digital. Nossa equipe combina expertise técnica e visão estratégica para entregar inovação de verdade.</p>
-  </section>
+    <section id="servicos" class="servicos">
+        <h2>Nossas Soluções</h2>
+        <p class="subtitle">Descubra como a tecnologia pode impulsionar seus resultados. Oferecemos soluções completas para o seu desafio.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-desktop"></i> 
+                </div>
+                <h3>Desenvolvimento Web</h3>
+                <p>Sites, plataformas e sistemas sob medida, modernos e responsivos, focados em usabilidade e alta performance.</p>
+            </div>
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Aplicativos Mobile</h3>
+                <p>Apps intuitivos e de alto desempenho para as plataformas Android e iOS, entregando uma experiência nativa.</p>
+            </div>
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Automação e IA</h3>
+                <p>Integramos inteligência artificial e automações que otimizam processos repetitivos e aumentam seus resultados.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="portfolio" class="portfolio">
+        <h2>Nosso Portfólio</h2>
+        <p class="subtitle">Confira alguns de nossos projetos mais recentes e veja a qualidade e o impacto de nossas soluções.</p>
+        <div class="portfolio-grid">
+            <div class="projeto-card">
+                <img src="https://via.placeholder.com/400x200" alt="Imagem do Projeto E-commerce" loading="lazy" width="400" height="200">
+                <div class="card-info">
+                    <h4>E-commerce de Alta Performance</h4>
+                    <p>Plataforma de vendas robusta focada em velocidade e experiência do usuário (UX).</p>
+                </div>
+            </div>
+            <div class="projeto-card">
+                <img src="https://via.placeholder.com/400x200" alt="Imagem do Projeto App Mobile" loading="lazy" width="400" height="200">
+                <div class="card-info">
+                    <h4>Aplicativo de Serviços On-Demand</h4>
+                    <p>Desenvolvimento nativo para iOS e Android com geolocalização e sistema de pagamento.</p>
+                </div>
+            </div>
+            <div class="projeto-card">
+                <img src="https://via.placeholder.com/400x200" alt="Imagem do Projeto Sistema de Gestão" loading="lazy" width="400" height="200">
+                <div class="card-info">
+                    <h4>Sistema de Gestão Empresarial (ERP)</h4>
+                    <p>Software para otimização de processos internos e gestão de recursos em tempo real.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn btn-secundario">Ver mais projetos</a>
+    </section>
 
-  <section id="servicos" class="servicos">
-    <h2>Nossas soluções</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Desenvolvimento Web</h3>
-        <p>Sites e sistemas sob medida, modernos e responsivos.</p>
-      </div>
-      <div class="card">
-        <h3>Aplicativos Mobile</h3>
-        <p>Apps intuitivos e de alto desempenho para Android e iOS.</p>
-      </div>
-      <div class="card">
-        <h3>Automação e IA</h3>
-        <p>Integramos inteligência artificial e automações que otimizam processos e aumentam resultados.</p>
-      </div>
-    </div>
-  </section>
+    <section id="equipe" class="equipe">
+        <h2>Nosso time</h2>
+        <div class="membros">
+            <div class="membro">
+                <img src="https://via.placeholder.com/150" alt="Foto de Lucas Andrade, CEO e Fundador" width="150" height="150" loading="lazy" />
+                <h3>Lucas Andrade</h3>
+                <p>CEO & Fundador</p>
+            </div>
+            <div class="membro">
+                <img src="https://via.placeholder.com/150" alt="Foto de Ana Souza, Desenvolvedora Full Stack" width="150" height="150" loading="lazy" />
+                <h3>Ana Souza</h3>
+                <p>Desenvolvedora Full Stack</p>
+            </div>
+            <div class="membro">
+                <img src="https://via.placeholder.com/150" alt="Foto de Rafael Lima, Designer UX/UI" width="150" height="150" loading="lazy" />
+                <h3>Rafael Lima</h3>
+                <p>Designer UX/UI</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="tecnologias" class="tecnologias">
+        <h2>Tecnologias que usamos</h2>
+        <p class="subtitle">Trabalhamos com as stacks mais modernas do mercado para garantir a qualidade e escalabilidade das suas soluções.</p>
+        <div class="tech-logos">
+            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Logo" class="tech-logo" loading="lazy">
+            <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Logo" class="tech-logo" loading="lazy">
+            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Logo" class="tech-logo" loading="lazy">
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" class="tech-logo" loading="lazy">
+            <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Logo" class="tech-logo" loading="lazy">
+        </div>
+    </section>
 
-  <section id="equipe" class="equipe">
-    <h2>Nosso time</h2>
-    <div class="membros">
-      <div class="membro">
-        <img src="https://via.placeholder.com/150" alt="Foto membro" />
-        <h3>Lucas Andrade</h3>
-        <p>CEO & Fundador</p>
-      </div>
-      <div class="membro">
-        <img src="https://via.placeholder.com/150" alt="Foto membro" />
-        <h3>Ana Souza</h3>
-        <p>Desenvolvedora Full Stack</p>
-      </div>
-      <div class="membro">
-        <img src="https://via.placeholder.com/150" alt="Foto membro" />
-        <h3>Rafael Lima</h3>
-        <p>Designer UX/UI</p>
-      </div>
-    </div>
-  </section>
+    <section id="contato" class="contato">
+        <h2>Entre em contato</h2>
+        <form>
+            <input type="text" placeholder="Seu nome" required />
+            <input type="email" placeholder="Seu e-mail" required />
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
-  <section id="contato" class="contato">
-    <h2>Entre em contato</h2>
-    <form>
-      <input type="text" placeholder="Seu nome" required />
-      <input type="email" placeholder="Seu e-mail" required />
-      <textarea placeholder="Sua mensagem" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <footer>
+        <p>© 2025 NexaCode - Todos os direitos reservados.</p>
+    </footer>
 
-  <footer>
-    <p>© 2025 NexaCode - Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

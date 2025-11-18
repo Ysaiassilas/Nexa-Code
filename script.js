@@ -1,51 +1,68 @@
-// ===== ANIMAÇÃO DE SCROLL =====
-window.addEventListener("scroll", () => {
-  const elementos = document.querySelectorAll("section");
-  const topo = window.innerHeight * 0.85;
+document.addEventListener("DOMContentLoaded", () => {
+    // ===================================
+    // HEADER SCROLL (Transparente -> Branco)
+    // ===================================
+    const header = document.querySelector("header");
 
-  elementos.forEach(el => {
-    const distancia = el.getBoundingClientRect().top;
-    if (distancia < topo) el.classList.add("show");
-  });
-});
+    const handleHeaderScroll = () => {
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    };
 
-// ===== MENU RESPONSIVO =====
-const menuToggle = document.getElementById("menu-toggle");
-const nav = document.getElementById("nav");
+    window.addEventListener("scroll", handleHeaderScroll);
+    handleHeaderScroll(); 
 
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  nav.classList.toggle("active");
-});
+    // ===================================
+    // ANIMAÇÃO DE SCROLL (Reveal)
+    // ===================================
+    const handleScrollAnimation = () => {
+        // Inclui a seção Hero para que ela não seja animada
+        const elementos = document.querySelectorAll("section:not(.hero)"); 
+        const triggerPoint = window.innerHeight * 0.85; 
 
-// ===== FECHAR MENU AO CLICAR =====
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    menuToggle.classList.remove("active");
-    nav.classList.remove("active");
+        elementos.forEach(el => {
+            const distancia = el.getBoundingClientRect().top;
+            if (distancia < triggerPoint) {
+                el.classList.add("show");
+            }
+        });
+    };
+    
+    window.addEventListener("scroll", handleScrollAnimation);
+    handleScrollAnimation(); 
 
-    const alvo = document.querySelector(link.getAttribute("href"));
-    window.scrollTo({ top: alvo.offsetTop - 60, behavior: "smooth" });
-  });
-});
+    // ===================================
+    // MENU RESPONSIVO
+    // ===================================
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
 
-// ===== EFEITO DE DIGITAÇÃO =====
-const texto = "Transformamos ideias em soluções digitais";
-const typedText = document.getElementById("typed-text");
-let i = 0;
-function digitar() {
-  if (i < texto.length) {
-    typedText.textContent += texto.charAt(i);
-    i++;
-    setTimeout(digitar, 80);
-  }
-}
-window.addEventListener("load", digitar);
+    const toggleMenu = () => {
+        menuToggle.classList.toggle("active");
+        nav.classList.toggle("active");
+        const isExpanded = menuToggle.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isExpanded);
+    };
 
-// ===== DARK MODE =====
-const darkToggle = document.getElementById("dark-toggle");
-darkToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  darkToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    menuToggle.addEventListener("click", toggleMenu);
+
+    // FECHAR MENU AO CLICAR EM LINK
+    document.querySelectorAll("nav a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            if (menuToggle.classList.contains("active")) {
+                toggleMenu(); 
+            }
+
+            const alvo = document.querySelector(link.getAttribute("href"));
+            // Ajuste do scroll: 60px para compensar a altura do header fixo
+            window.scrollTo({ top: alvo.offsetTop - 60, behavior: "smooth" });
+        });
+    });
+
+    // O EFEITO DE DIGITAÇÃO FOI REMOVIDO.
 });

@@ -13,65 +13,71 @@ html {
 body {
   background-color: #fff;
   color: #222;
-  transition: background 0.4s, color 0.4s;
   overflow-x: hidden;
 }
 
-/* ======= HEADER ======= */
+/* ======= HEADER - MODIFICADO (Transparente no topo) ======= */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #000;
-  color: white;
+  background-color: transparent; /* Transparente no topo */
+  color: white; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 25px 80px; 
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: none; 
+  transition: background 0.4s, padding 0.4s;
+}
+
+/* Estado do header quando a página rola para baixo (branco e com sombra) */
+header.scrolled {
+  background-color: #fff;
+  color: #222;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 80px;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
+  color: white; /* Logo branco sobre o Hero */
+  transition: color 0.4s;
+}
+
+header.scrolled .logo {
+    color: #222; /* Logo escuro ao rolar */
 }
 
 .logo span {
-  color: #ff6600;
-}
-
-/* ======= BOTÃO DARK MODE ======= */
-#dark-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.4rem;
-  cursor: pointer;
-  margin-right: 20px;
-  transition: transform 0.3s;
-}
-
-#dark-toggle:hover {
-  transform: rotate(20deg) scale(1.2);
+  /* Cor de destaque atualizada para azul vibrante */
+  color: #007AFF; 
 }
 
 /* ======= MENU ======= */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 40px; /* Aumenta o espaçamento, conforme protótipo */
 }
 
 nav ul li a {
   text-decoration: none;
-  color: white;
+  color: white; /* Links brancos sobre o Hero */
   font-weight: 500;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
-  color: #ff6600;
+/* Altera a cor dos links quando o header está scrollado (sobre fundo branco) */
+header.scrolled nav ul li a {
+  color: #222;
+}
+
+nav ul li a:hover,
+header.scrolled nav ul li a:hover {
+  color: #007AFF; 
 }
 
 /* ======= MENU RESPONSIVO ======= */
@@ -84,9 +90,13 @@ nav ul li a:hover {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: white; /* Cor da barra branca no topo */
   margin: 4px 0;
   transition: 0.3s;
+}
+
+header.scrolled .bar {
+    background-color: #222; /* Cor da barra escura ao rolar */
 }
 
 @media (max-width: 768px) {
@@ -94,7 +104,8 @@ nav ul li a:hover {
     position: absolute;
     top: 70px;
     right: 0;
-    background: #000;
+    /* Cor atualizada para um azul escuro */
+    background: #0E1B2C; 
     width: 200px;
     height: 0;
     overflow: hidden;
@@ -102,13 +113,27 @@ nav ul li a:hover {
   }
 
   nav.active {
-    height: 200px;
+    height: auto; 
+    padding-bottom: 10px;
+  }
+  
+  /* Ajuste no mobile para o logo e menu */
+  .logo, .bar {
+      color: white !important;
+  }
+  
+  header.scrolled .logo {
+      color: white; /* Força branco no menu aberto */
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
     padding-top: 20px;
+  }
+  
+  nav ul li a {
+      color: white;
   }
 
   .menu-toggle {
@@ -128,13 +153,14 @@ nav ul li a:hover {
   }
 }
 
-/* ======= HERO ======= */
+/* ======= HERO - MODIFICADO (Layout do Protótipo) ======= */
 .hero {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('https://images.unsplash.com/photo-1526378722484-ccdc4fd58cfa?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;
-  background-position: center;
+  /* Cor e padrão de fundo do protótipo */
+  background: 
+    linear-gradient(rgba(14, 27, 44, 0.8), rgba(14, 27, 44, 0.8)),
+    url('https://images.unsplash.com/photo-1526378722484-ccdc4fd58cfa?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  
   color: white;
   display: flex;
   align-items: center;
@@ -143,32 +169,27 @@ nav ul li a:hover {
   padding: 0 20px;
 }
 
+.hero-content {
+  max-width: 900px; 
+}
+
 .hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  color: #ff6600;
+  font-size: 3.5rem; 
+  margin-bottom: 40px; /* Mais espaço para os parágrafos */
+  color: white; 
+  line-height: 1.2;
+}
+
+/* Cor de destaque para "NexaCode" no h1 */
+.hero-content h1 span {
+    color: #007AFF;
 }
 
 .hero-content p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto 30px;
+  font-size: 1.25rem; 
+  max-width: 750px;
+  margin: 20px auto; /* Espaçamento entre os parágrafos */
   line-height: 1.6;
-}
-
-.btn {
-  background-color: #ff6600;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #e05600;
-  transform: scale(1.05);
 }
 
 /* ======= SEÇÕES ======= */
@@ -188,7 +209,7 @@ section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #ff6600;
+  color: #007AFF;
 }
 
 section p {
@@ -200,162 +221,421 @@ section p {
 }
 
 /* ======= SERVIÇOS ======= */
+.servicos {
+    padding: 100px 60px;
+    background-color: #f7f7f7; /* Fundo levemente cinza para a seção */
+}
+
+.servicos .subtitle {
+    margin-bottom: 50px;
+    font-size: 1.15rem;
+    color: #444;
+}
+
+.servicos h2 {
+    color: #0E1B2C; /* Cor escura para o título */
+}
+
 .servicos .cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .card {
-  background: #111;
-  color: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 300px;
-  transition: 0.4s;
-  text-align: center;
-  border: 2px solid transparent;
+    /* Novo estilo de card (limpo, branco e com sombra) */
+    background: #fff; 
+    color: #222;
+    padding: 40px 30px; /* Aumenta o padding */
+    border-radius: 15px;
+    width: 330px; /* Ajusta a largura */
+    transition: 0.4s;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
 }
 
 .card:hover {
-  border-color: #ff6600;
-  transform: translateY(-10px);
+    /* Cor de destaque atualizada para azul vibrante */
+    border-color: #007AFF; 
+    transform: translateY(-15px); /* Efeito de elevação mais pronunciado */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: #007AFF; /* Título em destaque */
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    max-width: none;
+}
+
+/* Estilo para o ícone */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #007AFF;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px auto;
+}
+/* ======= BOTÕES GERAIS ======= */
+.btn {
+  background-color: #007AFF; 
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block; /* Garante que a transição scale funcione */
+}
+
+.btn:hover {
+  background-color: #005BC5; 
+  transform: scale(1.05);
+}
+
+.btn-secundario {
+    background-color: transparent;
+    border: 2px solid #007AFF;
+    color: #007AFF;
+}
+
+.btn-secundario:hover {
+    background-color: #007AFF;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ======= PORTFÓLIO ======= */
+.portfolio {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #fff; /* Fundo branco e limpo */
+}
+
+.portfolio h2 {
+    color: #0E1B2C;
+    margin-bottom: 10px;
+}
+
+.portfolio .subtitle {
+    margin-bottom: 50px;
+    font-size: 1.15rem;
+    color: #444;
+}
+
+.portfolio .portfolio-grid {
+    display: grid;
+    /* 3 colunas, ajusta o tamanho conforme a tela */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Reduz o gap */
+    max-width: 1200px;
+    margin: 0 auto 50px auto; 
+    padding: 0 60px; 
+}
+
+.portfolio .projeto-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Sombra mais forte no card do protótipo */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+    border: none; /* Remove a borda para depender apenas da sombra */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.portfolio .projeto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio .projeto-card img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    display: block;
+    object-fit: cover;
+}
+
+.portfolio .card-info {
+    padding: 20px;
+}
+
+.portfolio .card-info h4 {
+    /* Cor de destaque */
+    color: #007AFF; 
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+}
+
+.portfolio .card-info p {
+    text-align: left;
+    font-size: 0.95rem;
+    padding: 0;
+    margin: 0;
+    color: #666;
+}
+
+.btn-secundario {
+    /* Ajusta o estilo para o botão "Ver mais" */
+    background-color: transparent;
+    border: 2px solid #007AFF;
+    color: #007AFF;
+}
+
+.btn-secundario:hover {
+    background-color: #007AFF;
+    color: white;
+    transform: scale(1.05);
 }
 
 /* ======= EQUIPE ======= */
+.equipe {
+    padding: 100px 60px;
+    background-color: #f0f8ff; /* Fundo cinza claro ou azul clarinho */
+}
+
+.equipe h2 {
+    color: #0E1B2C;
+    margin-bottom: 50px;
+}
+
 .equipe .membros {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px; /* Aumenta o espaçamento */
   flex-wrap: wrap;
-  margin-top: 40px;
 }
 
 .membro {
   background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Borda levemente menor */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
-  padding: 20px;
-  width: 250px;
+  padding: 30px 20px;
+  width: 280px; /* Aumenta um pouco a largura do card */
   transition: 0.3s;
+  border: 1px solid #eee;
 }
 
 .membro:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px); /* Elevação suave */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .membro img {
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 140px; /* Aumenta o tamanho da foto */
+  height: 140px;
   object-fit: cover;
   margin-bottom: 15px;
+  border: 4px solid #007AFF; /* Borda de destaque na cor primária */
 }
 
 .membro h3 {
-  color: #ff6600;
+  color: #222; /* Nome em cor escura */
   margin-bottom: 5px;
+  font-size: 1.4rem;
+}
+
+.membro p {
+  color: #007AFF; /* Função em cor de destaque */
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  max-width: none;
+}
+/* ======= TECNOLOGIAS/STACKS ======= */
+.tecnologias {
+    padding: 100px 60px;
+    text-align: center;
+    background-color: #fff; /* Fundo branco e limpo após a seção equipe */
+}
+
+.tecnologias h2 {
+    color: #0E1B2C;
+}
+
+.tecnologias .subtitle {
+    margin-bottom: 50px;
+    font-size: 1.15rem;
+    color: #444;
+}
+
+.tecnologias .tech-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px; /* Aumenta o espaço entre os logos */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tecnologias .tech-logo {
+    height: 50px; /* Aumenta um pouco o tamanho do logo */
+    transition: transform 0.3s, filter 0.3s;
+    filter: grayscale(10%); 
+}
+
+.tecnologias .tech-logo:hover {
+    transform: scale(1.15);
+    filter: grayscale(0%);
 }
 
 /* ======= CONTATO ======= */
+.contato {
+    padding: 100px 60px;
+    text-align: center;
+    /* Fundo levemente diferente para criar destaque */
+    background-color: #f7f7f7; 
+}
+
+.contato h2 {
+    color: #0E1B2C;
+    margin-bottom: 40px;
+}
+
 .contato form {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  max-width: 500px;
+  max-width: 600px; /* Aumenta um pouco o campo do formulário */
   margin: 0 auto;
 }
 
 .contato input,
 .contato textarea {
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+  padding: 15px; /* Aumenta o padding para ser mais amigável ao toque */
+  border-radius: 8px; /* Borda mais suave */
+  border: 1px solid #ddd;
+  font-size: 1.05rem;
   outline: none;
-  transition: border 0.3s;
+  transition: border 0.3s, box-shadow 0.3s;
 }
 
 .contato input:focus,
 .contato textarea:focus {
-  border-color: #ff6600;
+  border-color: #007AFF; 
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2); /* Efeito de foco suave */
+}
+
+.contato textarea {
+    resize: vertical;
+    min-height: 150px;
 }
 
 .contato button {
-  background-color: #ff6600;
+  background-color: #007AFF; 
   color: white;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 40px; /* Aumenta o padding horizontal */
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
+  width: auto; /* Permite que o botão tenha o tamanho do conteúdo */
+  margin-top: 10px;
 }
 
 .contato button:hover {
-  background-color: #e05600;
+  background-color: #005BC5; 
+  transform: scale(1.03);
 }
 
 /* ======= FOOTER ======= */
 footer {
-  background-color: #000;
-  color: white;
+  background-color: #0E1B2C; 
+  color: #ccc;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  padding: 30px 20px;
+  font-size: 1rem;
 }
 
-/* ======= DARK MODE ======= */
-body.dark {
-  background-color: #111;
-  color: #f5f5f5;
+/* ======= SEÇÃO SOBRE NÓS - MODIFICADA ======= */
+.sobre {
+    padding: 100px 80px; /* Aumenta o padding lateral */
 }
 
-body.dark header {
-  background-color: #1a1a1a;
+.sobre h2 {
+    text-align: left; /* Título alinhado à esquerda, se o protótipo indicar */
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #0E1B2C; /* Título em cor escura */
 }
 
-body.dark nav ul li a {
-  color: #fff;
-}
-
-body.dark .card {
-  background: #222;
-}
-
-body.dark .membro {
-  background: #1b1b1b;
-  color: white;
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
-}
-
-body.dark footer {
-  background-color: #1a1a1a;
-}
-
-/* ======= RESPONSIVIDADE ======= */
-@media (max-width: 768px) {
-  header {
-    padding: 20px 30px;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .servicos .cards,
-  .equipe .membros {
-    flex-direction: column;
+.sobre-content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-  }
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-texto {
+    flex: 1; /* Ocupa uma parte do espaço */
+}
+
+.sobre-texto p {
+    text-align: left; /* Alinha o texto à esquerda, como em um protótipo de duas colunas */
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 25px; /* Espaço entre parágrafos */
+    max-width: none; /* Remove a restrição de max-width que estava em 'section p' */
+    color: #444;
+}
+
+.sobre-imagem {
+    flex: 1; /* Ocupa a outra parte do espaço */
+    max-width: 500px; /* Limita o tamanho da imagem */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Responsividade para a seção Sobre */
+@media (max-width: 900px) {
+    .sobre {
+        padding: 80px 40px;
+    }
+    .sobre-content {
+        flex-direction: column; /* Pilha a imagem e o texto no mobile */
+        gap: 40px;
+    }
+    
+    .sobre h2 {
+        text-align: center;
+    }
+
+    .sobre-texto p {
+        text-align: center;
+    }
+
+    .sobre-imagem {
+        order: -1; /* Coloca a imagem acima do texto no mobile (opcional) */
+        max-width: 100%;
+    }
 }
