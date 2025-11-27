@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 html {
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: rgb(7, 7, 82);
   color: #222;
   overflow-x: hidden;
 }
@@ -43,12 +43,12 @@ header.scrolled {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: white; /* Logo branco sobre o Hero */
+  color: rgb(15, 2, 71); /* Logo branco sobre o Hero */
   transition: color 0.4s;
 }
 
 header.scrolled .logo {
-    color: #222; /* Logo escuro ao rolar */
+    color: #140649; /* Logo escuro ao rolar */
 }
 
 .logo span {
