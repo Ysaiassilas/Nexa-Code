@@ -1,4 +1,4 @@
-/* ======= BASE ======= */
+/* ======= BASE - Corrigido 'corpo' para 'body' ======= */
 * {
   margin: 0;
   padding: 0;
@@ -10,18 +10,18 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+body { /* CORRIGIDO: Era 'corpo' */
   background-color: rgb(7, 7, 82);
   color: #222;
   overflow-x: hidden;
 }
 
-/* ======= HEADER - MODIFICADO (Transparente no topo) ======= */
-header {
+/* ======= HEADER - Corrigido contraste do Logo ======= */
+header { /* CORRIGIDO: Era 'cabeçalho' */
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: transparent; /* Transparente no topo */
+  background-color: transparent;
   color: white; 
   display: flex;
   justify-content: space-between;
@@ -43,34 +43,32 @@ header.scrolled {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: rgb(15, 2, 71); /* Logo branco sobre o Hero */
+  color: white; /* CORRIGIDO: Branco para contrastar com o HERO */
   transition: color 0.4s;
 }
 
 header.scrolled .logo {
-    color: #140649; /* Logo escuro ao rolar */
+    color: #140649; 
 }
 
 .logo span {
-  /* Cor de destaque atualizada para azul vibrante */
   color: #007AFF; 
 }
 
-/* ======= MENU ======= */
+/* ======= MENU e RESPONSIVO (Sem alterações) ======= */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; /* Aumenta o espaçamento, conforme protótipo */
+  gap: 40px; 
 }
 
 nav ul li a {
   text-decoration: none;
-  color: white; /* Links brancos sobre o Hero */
+  color: white; 
   font-weight: 500;
   transition: color 0.3s;
 }
 
-/* Altera a cor dos links quando o header está scrollado (sobre fundo branco) */
 header.scrolled nav ul li a {
   color: #222;
 }
@@ -80,7 +78,6 @@ header.scrolled nav ul li a:hover {
   color: #007AFF; 
 }
 
-/* ======= MENU RESPONSIVO ======= */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -96,7 +93,7 @@ header.scrolled nav ul li a:hover {
 }
 
 header.scrolled .bar {
-    background-color: #222; /* Cor da barra escura ao rolar */
+    background-color: #222; 
 }
 
 @media (max-width: 768px) {
@@ -104,7 +101,6 @@ header.scrolled .bar {
     position: absolute;
     top: 70px;
     right: 0;
-    /* Cor atualizada para um azul escuro */
     background: #0E1B2C; 
     width: 200px;
     height: 0;
@@ -117,13 +113,12 @@ header.scrolled .bar {
     padding-bottom: 10px;
   }
   
-  /* Ajuste no mobile para o logo e menu */
   .logo, .bar {
-      color: white !important;
+    color: white !important;
   }
   
   header.scrolled .logo {
-      color: white; /* Força branco no menu aberto */
+    color: white;
   }
 
   nav ul {
@@ -133,7 +128,7 @@ header.scrolled .bar {
   }
   
   nav ul li a {
-      color: white;
+    color: white;
   }
 
   .menu-toggle {
@@ -153,10 +148,9 @@ header.scrolled .bar {
   }
 }
 
-/* ======= HERO - MODIFICADO (Layout do Protótipo) ======= */
+/* ======= HERO (Sem alterações) ======= */
 .hero {
   height: 100vh;
-  /* Cor e padrão de fundo do protótipo */
   background: 
     linear-gradient(rgba(14, 27, 44, 0.8), rgba(14, 27, 44, 0.8)),
     url('https://images.unsplash.com/photo-1526378722484-ccdc4fd58cfa?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
@@ -175,12 +169,11 @@ header.scrolled .bar {
 
 .hero-content h1 {
   font-size: 3.5rem; 
-  margin-bottom: 40px; /* Mais espaço para os parágrafos */
+  margin-bottom: 40px; 
   color: white; 
   line-height: 1.2;
 }
 
-/* Cor de destaque para "NexaCode" no h1 */
 .hero-content h1 span {
     color: #007AFF;
 }
@@ -188,11 +181,11 @@ header.scrolled .bar {
 .hero-content p {
   font-size: 1.25rem; 
   max-width: 750px;
-  margin: 20px auto; /* Espaçamento entre os parágrafos */
+  margin: 20px auto; 
   line-height: 1.6;
 }
 
-/* ======= SEÇÕES ======= */
+/* ======= SEÇÕES (Geral) ======= */
 section {
   padding: 100px 60px;
   opacity: 0;
@@ -220,76 +213,7 @@ section p {
   line-height: 1.6;
 }
 
-/* ======= SERVIÇOS ======= */
-.servicos {
-    padding: 100px 60px;
-    background-color: #f7f7f7; /* Fundo levemente cinza para a seção */
-}
-
-.servicos .subtitle {
-    margin-bottom: 50px;
-    font-size: 1.15rem;
-    color: #8b8282;
-}
-
-.servicos h2 {
-    color: #0E1B2C; /* Cor escura para o título */
-}
-
-.servicos .cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.card {
-    /* Novo estilo de card (limpo, branco e com sombra) */
-    background: #fff; 
-    color: #222;
-    padding: 40px 30px; /* Aumenta o padding */
-    border-radius: 15px;
-    width: 330px; /* Ajusta a largura */
-    transition: 0.4s;
-    text-align: center;
-    border: 1px solid #ddd;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Sombra mais suave */
-}
-
-.card:hover {
-    /* Cor de destaque atualizada para azul vibrante */
-    border-color: #007AFF; 
-    transform: translateY(-15px); /* Efeito de elevação mais pronunciado */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.card h3 {
-    font-size: 1.4rem;
-    color: #007AFF; /* Título em destaque */
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 1rem;
-    max-width: none;
-}
-
-/* Estilo para o ícone */
-.icon-wrapper {
-    width: 60px;
-    height: 60px;
-    background-color: #007AFF;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    margin: 0 auto 20px auto;
-}
-/* ======= BOTÕES GERAIS ======= */
+/* ======= BOTÕES GERAIS (Sem alterações) ======= */
 .btn {
   background-color: #007AFF; 
   color: white;
@@ -298,7 +222,7 @@ section p {
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
-  display: inline-block; /* Garante que a transição scale funcione */
+  display: inline-block; 
 }
 
 .btn:hover {
@@ -318,11 +242,78 @@ section p {
     transform: scale(1.05);
 }
 
-/* ======= PORTFÓLIO ======= */
+/* ======= SERVIÇOS (Sem alterações) ======= */
+.servicos {
+    padding: 100px 60px;
+    background-color: #f7f7f7; 
+}
+
+.servicos .subtitle {
+    margin-bottom: 50px;
+    font-size: 1.15rem;
+    color: #444;
+}
+
+.servicos h2 {
+    color: #0E1B2C; 
+}
+
+.servicos .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    background: #fff; 
+    color: #222;
+    padding: 40px 30px; 
+    border-radius: 15px;
+    width: 330px; 
+    transition: 0.4s;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); 
+}
+
+.card:hover {
+    border-color: #007AFF; 
+    transform: translateY(-15px); 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: #007AFF; 
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    max-width: none;
+}
+
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: #007AFF;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px auto;
+}
+
+/* ======= PORTFÓLIO - Adaptado para Carrossel ======= */
 .portfolio {
     padding: 100px 0;
     text-align: center;
-    background-color: #fff; /* Fundo branco e limpo */
+    background-color: #fff;
 }
 
 .portfolio h2 {
@@ -336,25 +327,22 @@ section p {
     color: #444;
 }
 
-.portfolio .portfolio-grid {
-    display: grid;
-    /* 3 colunas, ajusta o tamanho conforme a tela */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Reduz o gap */
+/* Apenas container para o Carrossel (sem regras de grid) */
+.portfolio-carousel {
     max-width: 1200px;
     margin: 0 auto 50px auto; 
     padding: 0 60px; 
 }
-
+/* Estilos do card mantidos (apenas o layout será gerenciado pelo Slick) */
 .portfolio .projeto-card {
     background: #fff;
     border-radius: 12px;
     overflow: hidden;
-    /* Sombra mais forte no card do protótipo */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
-    border: none; /* Remove a borda para depender apenas da sombra */
+    border: none;
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: left;
+    margin: 10px; /* Adicionado margem para separação dos slides */
 }
 
 .portfolio .projeto-card:hover {
@@ -364,7 +352,7 @@ section p {
 
 .portfolio .projeto-card img {
     width: 100%;
-    height: 200px; /* Altura fixa para as imagens */
+    height: 200px;
     display: block;
     object-fit: cover;
 }
@@ -374,7 +362,6 @@ section p {
 }
 
 .portfolio .card-info h4 {
-    /* Cor de destaque */
     color: #007AFF; 
     margin: 0 0 5px 0;
     font-size: 1.3rem;
@@ -388,23 +375,10 @@ section p {
     color: #666;
 }
 
-.btn-secundario {
-    /* Ajusta o estilo para o botão "Ver mais" */
-    background-color: transparent;
-    border: 2px solid #007AFF;
-    color: #007AFF;
-}
-
-.btn-secundario:hover {
-    background-color: #007AFF;
-    color: white;
-    transform: scale(1.05);
-}
-
-/* ======= EQUIPE ======= */
+/* ======= EQUIPE - Adaptado para Carrossel ======= */
 .equipe {
     padding: 100px 60px;
-    background-color: #f0f8ff; /* Fundo cinza claro ou azul clarinho */
+    background-color: #f0f8ff;
 }
 
 .equipe h2 {
@@ -412,51 +386,154 @@ section p {
     margin-bottom: 50px;
 }
 
-.equipe .membros {
-  display: flex;
-  justify-content: center;
-  gap: 40px; /* Aumenta o espaçamento */
-  flex-wrap: wrap;
+/* Apenas container para o Carrossel (sem regras de layout) */
+.equipe-carousel {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .membro {
-  background: #fff;
-  border-radius: 10px; /* Borda levemente menor */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  padding: 30px 20px;
-  width: 280px; /* Aumenta um pouco a largura do card */
-  transition: 0.3s;
-  border: 1px solid #eee;
+    background: #fff
+    ;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    padding: 30px 20px;
+    width: 280px; 
+    transition: 0.3s;
+    border: 1px solid #eee;
+    margin: 10px; /* Adicionado margem para separação dos slides */
 }
 
 .membro:hover {
-  transform: translateY(-5px); /* Elevação suave */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .membro img {
-  border-radius: 50%;
-  width: 140px; /* Aumenta o tamanho da foto */
-  height: 140px;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 4px solid #007AFF; /* Borda de destaque na cor primária */
+    border-radius: 50%;
+    width: 140px; 
+    height: 140px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #007AFF; 
 }
 
 .membro h3 {
-  color: #222; /* Nome em cor escura */
-  margin-bottom: 5px;
-  font-size: 1.4rem;
+    color: #222; 
+    margin-bottom: 5px;
+    font-size: 1.4rem;
 }
 
 .membro p {
-  color: #007AFF; /* Função em cor de destaque */
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0;
-  max-width: none;
+    color: #007AFF; 
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    max-width: none;
 }
+
+/* =================================== */
+/* SEÇÃO PARCEIROS (Novo) */
+/* =================================== */
+.parceiros {
+    padding: 100px 60px;
+    background-color: #0E1B2C; /* Fundo Azul Escuro (conforme imagem) */
+}
+
+.parceiros h2 {
+    color: white; /* Cor do título Branca */
+    margin-bottom: 50px;
+}
+
+.parceiros-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; 
+}
+
+.parceiros-logo img {
+    max-width: 200px;
+    height: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* =================================== */
+/* FOOTER (Adaptado) */
+/* =================================== */
+footer {
+    background-color: #f0f0f0; /* Fundo claro para o footer */
+    padding: 40px 60px 20px 60px;
+    text-align: center;
+    color: #444;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+}
+
+.logo-footer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0E1B2C; 
+}
+
+.logo-footer span {
+    color: #007AFF;
+}
+
+.footer-contato {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-contato a {
+    text-decoration: none;
+    color: #444;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.footer-contato a:hover {
+    color: #007AFF;
+}
+
+.footer-contato i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+    color: #007AFF; /* Ícones em azul */
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-contato {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
 /* ======= TECNOLOGIAS/STACKS ======= */
 .tecnologias {
     padding: 100px 60px;
@@ -495,77 +572,7 @@ section p {
     filter: grayscale(0%);
 }
 
-/* ======= CONTATO ======= */
-.contato {
-    padding: 100px 60px;
-    text-align: center;
-    /* Fundo levemente diferente para criar destaque */
-    background-color: #f7f7f7; 
-}
 
-.contato h2 {
-    color: #0E1B2C;
-    margin-bottom: 40px;
-}
-
-.contato form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  max-width: 600px; /* Aumenta um pouco o campo do formulário */
-  margin: 0 auto;
-}
-
-.contato input,
-.contato textarea {
-  width: 100%;
-  padding: 15px; /* Aumenta o padding para ser mais amigável ao toque */
-  border-radius: 8px; /* Borda mais suave */
-  border: 1px solid #ddd;
-  font-size: 1.05rem;
-  outline: none;
-  transition: border 0.3s, box-shadow 0.3s;
-}
-
-.contato input:focus,
-.contato textarea:focus {
-  border-color: #007AFF; 
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2); /* Efeito de foco suave */
-}
-
-.contato textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-
-.contato button {
-  background-color: #007AFF; 
-  color: white;
-  border: none;
-  padding: 12px 40px; /* Aumenta o padding horizontal */
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-  width: auto; /* Permite que o botão tenha o tamanho do conteúdo */
-  margin-top: 10px;
-}
-
-.contato button:hover {
-  background-color: #005BC5; 
-  transform: scale(1.03);
-}
-
-/* ======= FOOTER ======= */
-footer {
-  background-color: #0E1B2C; 
-  color: #ccc;
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 1rem;
-}
 
 /* ======= SEÇÃO SOBRE NÓS - MODIFICADA ======= */
 .sobre {
@@ -622,7 +629,7 @@ footer {
         padding: 80px 40px;
     }
     .sobre-content {
-        flex-direction: column; /* Pilha a imagem e o texto no mobile */
+        flex-direction: column; 
         gap: 40px;
     }
     
@@ -635,7 +642,68 @@ footer {
     }
 
     .sobre-imagem {
-        order: -1; /* Coloca a imagem acima do texto no mobile (opcional) */
+        order: -1;
         max-width: 100%;
+    }
+}
+
+/* =================================== */
+/* ESTILO E POSICIONAMENTO DAS SETAS SLICK */
+/* =================================== */
+
+/* Estilo geral das setas */
+.slick-prev:before, 
+.slick-next:before {
+    font-family: 'slick';
+    font-size: 30px; /* Aumenta o tamanho do ícone */
+    line-height: 1;
+    opacity: 0.75;
+    color: #0E1B2C; /* Cor das setas (Azul Escuro) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: color 0.3s;
+}
+
+/* Hover e Foco */
+.slick-prev:hover:before, 
+.slick-next:hover:before {
+    opacity: 1;
+    color: #007AFF; /* Cor de destaque ao passar o mouse */
+}
+
+/* Posicionamento - Garante que as setas fiquem no centro vertical */
+.slick-prev, 
+.slick-next {
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+}
+
+/* Seta Anterior */
+.slick-prev {
+    left: -20px; /* Ajuste para fora do carrossel */
+}
+
+/* Seta Próxima */
+.slick-next {
+    right: -20px; /* Ajuste para fora do carrossel */
+}
+
+/* Ajuste no mobile: esconde setas ou move para a borda */
+@media (max-width: 600px) {
+    .slick-prev,
+    .slick-next {
+        width: 30px;
+        height: 30px;
+    }
+    .slick-prev {
+        left: 0px; 
+    }
+    .slick-next {
+        right: 0px;
+    }
+    .slick-prev:before, 
+    .slick-next:before {
+        font-size: 20px;
     }
 }

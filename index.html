@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NexaCode | Inovação em Tecnologia</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preload" href="style.css" as="style" />
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    
     <link rel="stylesheet" href="style.css" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -21,12 +25,12 @@
             <div class="bar"></div>
         </div>
 
-        <nav id="nav">
-            <ul>0
-                <li><a href="#sobre" role="menuitem">Quem Somos</a></li> 
-                <li><a href="#portfolio" role="menuitem">Projetos</a><li> 
-                <li><a href="#servicos" role="menuitem">Serviços</a></li>
-                <li><a href="#contato" role="menuitem">Contato</a></li>
+        <nav id="nav" role="navigation">
+            <ul>
+                <li><a href="#sobre">Quem Somos</a></li> 
+                <li><a href="#portfolio">Projetos</a></li> 
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -36,11 +40,12 @@
             <h1>Nexa<span>Code</span> transformará suas ideias em soluções digitais reais</h1>
             <p>Com uma equipe apaixonada por tecnologia, criamos sistemas e experiências únicas que conectam inovação e resultado.</p>
             <p>Desenvolvemos com propósito, unindo design, performance e estratégia para fazer sua empresa ir além.</p>
+            <a href="#contato" class="btn">Solicite um Orçamento</a>
         </div>
     </section>
 
     <section id="sobre" class="sobre">
-        <h2>Sobre nós</h2>
+        <h2>Quem Somos</h2>
         <div class="sobre-content">
             <div class="sobre-texto">
                 <p>Somos uma startup focada em desenvolver soluções tecnológicas personalizadas para empresas que desejam se destacar no mercado digital. Nossa equipe combina expertise técnica e visão estratégica para entregar inovação de verdade.</p>
@@ -72,20 +77,13 @@
                 <h3>Aplicativos Mobile</h3>
                 <p>Apps intuitivos e de alto desempenho para as plataformas Android e iOS, entregando uma experiência nativa.</p>
             </div>
-            <div class="card">
-                <div class="icon-wrapper">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3>Automação e IA</h3>
-                <p>Integramos inteligência artificial e automações que otimizam processos repetitivos e aumentam seus resultados.</p>
-            </div>
         </div>
     </section>
     
     <section id="portfolio" class="portfolio">
-        <h2>Nosso Portfólio</h2>
+        <h2>Confira nossos projetos!</h2>
         <p class="subtitle">Confira alguns de nossos projetos mais recentes e veja a qualidade e o impacto de nossas soluções.</p>
-        <div class="portfolio-grid">
+        <div class="portfolio-carousel"> 
             <div class="projeto-card">
                 <img src="https://via.placeholder.com/400x200" alt="Imagem do Projeto E-commerce" loading="lazy" width="400" height="200">
                 <div class="card-info">
@@ -107,13 +105,20 @@
                     <p>Software para otimização de processos internos e gestão de recursos em tempo real.</p>
                 </div>
             </div>
+             <div class="projeto-card">
+                <img src="https://via.placeholder.com/400x200" alt="Projeto Extra 1" loading="lazy" width="400" height="200">
+                <div class="card-info">
+                    <h4>Sistema de Controle de Estoque</h4>
+                    <p>Solução SaaS para gestão e automação de inventário B2B.</p>
+                </div>
+            </div>
         </div>
         <a href="#" class="btn btn-secundario">Ver mais projetos</a>
     </section>
 
     <section id="equipe" class="equipe">
-        <h2>Nosso time</h2>
-        <div class="membros">
+        <h2>Nossa Equipe</h2>
+        <div class="equipe-carousel">
             <div class="membro">
                 <img src="https://via.placeholder.com/150" alt="Foto de Lucas Andrade, CEO e Fundador" width="150" height="150" loading="lazy" />
                 <h3>Lucas Andrade</h3>
@@ -144,20 +149,39 @@
         </div>
     </section>
 
-    <section id="contato" class="contato">
-        <h2>Entre em contato</h2>
-        <form>
-            <input type="text" placeholder="Seu nome" required />
-            <input type="email" placeholder="Seu e-mail" required />
-            <textarea placeholder="Sua mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+   <section id="parceiros" class="parceiros">
+        <h2>Parceiros da NexaCode</h2>
+        <div class="parceiros-logo">
+            <img src="logo-senac.jpg" 
+                 alt="Logo do Senac" 
+                 loading="lazy"
+                 width="200"
+                 height="200"
+            >
+        </div>
     </section>
 
     <footer>
-        <p>© 2025 NexaCode - Todos os direitos reservados.</p>
+        <div class="footer-content">
+            <div class="logo-footer">Nexa<span>Code</span></div>
+            <div class="footer-contato">
+                <a href="https://instagram.com/nexa_code" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="mailto:contato@nexacode.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:00000000000">
+                    <i class="fas fa-phone"></i> (00) 0000-0000
+                </a>
+            </div>
+        </div>
+        <p class="copyright">© 2025 NexaCode - Todos os direitos reservados.</p>
     </footer>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
