@@ -68,17 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===================================
     const adicionarMembrosEquipe = () => {
         const novosMembros = [
-            { nome: "Isabella Campos", funcao: "Gerente de Projetos" },
-            { nome: "Pedro Ferreira", funcao: "Engenheiro DevOps" },
-            { nome: "Mariana Silva", funcao: "Front-end Sênior" },
-            { nome: "Bruno Reis", funcao: "Desenvolvedor Back-end" },
-            { nome: "Carla Santos", funcao: "Analista de QA" },
-            { nome: "Thiago Oliveira", funcao: "Especialista em Dados" },
-            { nome: "Gabriela Mendes", funcao: "Marketing Digital" },
-            { nome: "Felipe Costa", funcao: "Suporte Técnico" },
-            { nome: "Laura Rocha", funcao: "Designer de Interação" },
-            { nome: "Victor Nunes", funcao: "Estagiário de Programação" },
-            { nome: "Sofia Lima", funcao: "Analista de Conteúdo" }
+            { nome: "João Victor", funcao: "Gerente de Projetos" },
+            { nome: "Lucyano Andrade", funcao: "Engenheiro DevOps" },
+            { nome: "Maria Clara Valadares", funcao: "Front-end Sênior" },
+            { nome: "Pedro Augusto", funcao: "Desenvolvedor Back-end" },
+            { nome: "Pedro Rómulo", funcao: "Analista de QA" },
+            { nome: "Ruan Carlos", funcao: "Especialista em Dados" },
+            { nome: "Samuel Henrique", funcao: "Marketing Digital" },
+            { nome: "Samuel Maia", funcao: "Suporte Técnico" },
+            { nome: "Sophia Martini", funcao: "Designer de Interação" },
+            { nome: "Victor Gabriel", funcao: "Estagiário de Programação" },
+            { nome: "Ysaias Silas", funcao: "Analista de Conteúdo" }
         ];
 
         const carouselContainer = document.querySelector('.equipe-carousel');
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===================================
     const adicionarProjetosPortfolio = () => {
         const projetos = [
-            { nome: "E-commerce Mestre", descricao: "Marketplace robusto com foco em escalabilidade e UX de compra e venda.", link: "https://www.mercadolivre.com.br" },
+            { nome: "E-commerce Mestre", descricao: "Marketplace robusto com foco em escalabilidade e UX de compra e venda.", link: "./imagens-projetos/HR-system.png" },
             { nome: "App On-Demand", descricao: "Desenvolvimento nativo com geolocalização e sistema de pagamento integrado.", link: "https://www.ifood.com.br" },
             { nome: "Sistema ERP", descricao: "Software personalizado para otimização de processos internos e gestão de recursos.", link: "https://www.sap.com/brazil/products/erp.html" },
             { nome: "Portal Corporativo", descricao: "Plataforma interna para comunicação e compartilhamento de documentos de grandes equipes.", link: "https://www.microsoft.com/pt-br/microsoft-365/sharepoint/collaboration" },
@@ -111,10 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
             { nome: "Sistema Fintech", descricao: "Desenvolvimento de API e plataforma de gestão de pagamentos segura e de alta disponibilidade.", link: "https://www.nubank.com.br" },
             { nome: "Landing Page SEO", descricao: "Página única desenvolvida com foco em velocidade e otimização para SEO.", link: "https://neilpatel.com/" },
             { nome: "Sistema B2B", descricao: "Plataforma para agendamento de serviços com integração de calendários e faturamento automatizado.", link: "https://www.booking.com" },
-            { nome: "Blog Corporativo", descricao: "Desenvolvimento de um CMS para blog com ênfase em performance de carregamento e UX para leitura.", link: "https://blog.hubspot.com/" },
-            { nome: "App de Notícias", descricao: "App com feed dinâmico e notificação push, projetado para alta audiência e baixo consumo de dados.", link: "https://g1.globo.com/" },
-            { nome: "Plataforma Leilão", descricao: "Sistema com lances em tempo real (websockets) e sistema de autenticação de usuários e produtos.", link: "https://www.ebay.com/" },
-            { nome: "Sistema Monitoramento", descricao: "Desenvolvimento de dashboards de BI para visualização e análise de grandes volumes de dados.", link: "https://www.datarobot.com/br/" }
         ];
 
         const carouselContainer = document.querySelector('.portfolio-carousel');

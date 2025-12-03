@@ -1,4 +1,4 @@
-/* ======= BASE - Corrigido 'corpo' para 'body' ======= */
+/* ======= BASE ======= */
 * {
   margin: 0;
   padding: 0;
@@ -10,14 +10,14 @@ html {
   scroll-behavior: smooth;
 }
 
-body { /* CORRIGIDO: Era 'corpo' */
-  background-color: rgb(7, 7, 82);
+body {
+  background-color: #1a2f4a;
   color: #222;
   overflow-x: hidden;
 }
 
-/* ======= HEADER - Corrigido contraste do Logo ======= */
-header { /* CORRIGIDO: Era 'cabeçalho' */
+/* ======= HEADER ======= */
+header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -32,7 +32,6 @@ header { /* CORRIGIDO: Era 'cabeçalho' */
   transition: background 0.4s, padding 0.4s;
 }
 
-/* Estado do header quando a página rola para baixo (branco e com sombra) */
 header.scrolled {
   background-color: #fff;
   color: #222;
@@ -43,19 +42,19 @@ header.scrolled {
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: white; /* CORRIGIDO: Branco para contrastar com o HERO */
+  color: white;
   transition: color 0.4s;
 }
 
 header.scrolled .logo {
-    color: #140649; 
+  color: #140649; 
 }
 
 .logo span {
   color: #007AFF; 
 }
 
-/* ======= MENU e RESPONSIVO (Sem alterações) ======= */
+/* ======= MENU e RESPONSIVO ======= */
 nav ul {
   list-style: none;
   display: flex;
@@ -87,13 +86,13 @@ header.scrolled nav ul li a:hover {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: white; /* Cor da barra branca no topo */
+  background-color: white;
   margin: 4px 0;
   transition: 0.3s;
 }
 
 header.scrolled .bar {
-    background-color: #222; 
+  background-color: #222; 
 }
 
 @media (max-width: 768px) {
@@ -113,7 +112,8 @@ header.scrolled .bar {
     padding-bottom: 10px;
   }
   
-  .logo, .bar {
+  .logo, 
+  .bar {
     color: white !important;
   }
   
@@ -148,19 +148,20 @@ header.scrolled .bar {
   }
 }
 
-/* ======= HERO (Sem alterações) ======= */
+/* ======= HERO - CORRIGIDO: Sempre visível ======= */
 .hero {
   height: 100vh;
   background: 
     linear-gradient(rgba(14, 27, 44, 0.8), rgba(14, 27, 44, 0.8)),
     url('https://images.unsplash.com/photo-1526378722484-ccdc4fd58cfa?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-  
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 20px;
+  opacity: 1; /* CORRIGIDO: Hero sempre visível */
+  transform: translateY(0); /* CORRIGIDO: Hero sempre visível */
 }
 
 .hero-content {
@@ -170,12 +171,12 @@ header.scrolled .bar {
 .hero-content h1 {
   font-size: 3.5rem; 
   margin-bottom: 40px; 
-  color: white; 
+  color: rgb(255, 255, 255); 
   line-height: 1.2;
 }
 
 .hero-content h1 span {
-    color: #007AFF;
+  color: #1880f0;
 }
 
 .hero-content p {
@@ -185,8 +186,8 @@ header.scrolled .bar {
   line-height: 1.6;
 }
 
-/* ======= SEÇÕES (Geral) ======= */
-section {
+/* ======= SEÇÕES (Geral) - OTIMIZADO ======= */
+section:not(.hero) { /* CORRIGIDO: Aplica opacity 0 apenas para sections que não são hero */
   padding: 100px 60px;
   opacity: 0;
   transform: translateY(40px);
@@ -202,7 +203,7 @@ section h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #007AFF;
+  color: #ffffff;
 }
 
 section p {
@@ -213,7 +214,7 @@ section p {
   line-height: 1.6;
 }
 
-/* ======= BOTÕES GERAIS (Sem alterações) ======= */
+/* ======= BOTÕES GERAIS ======= */
 .btn {
   background-color: #007AFF; 
   color: white;
@@ -231,479 +232,466 @@ section p {
 }
 
 .btn-secundario {
-    background-color: transparent;
-    border: 2px solid #007AFF;
-    color: #007AFF;
+  background-color: transparent;
+  border: 2px solid #007AFF;
+  color: #007AFF;
 }
 
 .btn-secundario:hover {
-    background-color: #007AFF;
-    color: white;
-    transform: scale(1.05);
+  background-color: #007AFF;
+  color: white;
+  transform: scale(1.05);
 }
 
-/* ======= SERVIÇOS (Sem alterações) ======= */
+/* ======= SERVIÇOS ======= */
 .servicos {
-    padding: 100px 60px;
-    background-color: #f7f7f7; 
+  padding: 100px 60px;
+  background-color: #2a4a6a;
 }
 
 .servicos .subtitle {
-    margin-bottom: 50px;
-    font-size: 1.15rem;
-    color: #444;
+  margin-bottom: 50px;
+  font-size: 1.15rem;
+  color: #e0e0e0;
 }
 
 .servicos h2 {
-    color: #0E1B2C; 
+  color: #ffffff;
 }
 
 .servicos .cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .card {
-    background: #fff; 
-    color: #222;
-    padding: 40px 30px; 
-    border-radius: 15px;
-    width: 330px; 
-    transition: 0.4s;
-    text-align: center;
-    border: 1px solid #ddd;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); 
+  background: #fff; 
+  color: #222;
+  padding: 40px 30px; 
+  border-radius: 15px;
+  width: 330px; 
+  transition: 0.4s;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); 
 }
 
 .card:hover {
-    border-color: #007AFF; 
-    transform: translateY(-15px); 
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: #007AFF; 
+  transform: translateY(-15px); 
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
-    font-size: 1.4rem;
-    color: #007AFF; 
-    margin-top: 15px;
-    margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #007AFF; 
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 1rem;
-    max-width: none;
+  font-size: 1rem;
+  max-width: none;
 }
 
 .icon-wrapper {
-    width: 60px;
-    height: 60px;
-    background-color: #007AFF;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    margin: 0 auto 20px auto;
+  width: 60px;
+  height: 60px;
+  background-color: #007AFF;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  margin: 0 auto 20px auto;
 }
 
-/* ======= PORTFÓLIO - Adaptado para Carrossel ======= */
+/* ======= PORTFÓLIO - Carrossel ======= */
 .portfolio {
-    padding: 100px 0;
-    text-align: center;
-    background-color: #fff;
+  padding: 100px 0;
+  text-align: center;
+  background-color: #1e3a5a;
 }
 
 .portfolio h2 {
-    color: #0E1B2C;
-    margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .portfolio .subtitle {
-    margin-bottom: 50px;
-    font-size: 1.15rem;
-    color: #444;
+  margin-bottom: 50px;
+  font-size: 1.15rem;
+  color: #e0e0e0;
 }
 
-/* Apenas container para o Carrossel (sem regras de grid) */
 .portfolio-carousel {
-    max-width: 1200px;
-    margin: 0 auto 50px auto; 
-    padding: 0 60px; 
+  max-width: 1200px;
+  margin: 0 auto 50px auto; 
+  padding: 0 60px; 
 }
-/* Estilos do card mantidos (apenas o layout será gerenciado pelo Slick) */
+
 .portfolio .projeto-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
-    border: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
-    margin: 10px; /* Adicionado margem para separação dos slides */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+  margin: 10px;
 }
 
 .portfolio .projeto-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .portfolio .projeto-card img {
-    width: 100%;
-    height: 200px;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;
 }
 
 .portfolio .card-info {
-    padding: 20px;
+  padding: 20px;
 }
 
 .portfolio .card-info h4 {
-    color: #007AFF; 
-    margin: 0 0 5px 0;
-    font-size: 1.3rem;
+  color: #007AFF; 
+  margin: 0 0 5px 0;
+  font-size: 1.3rem;
 }
 
 .portfolio .card-info p {
-    text-align: left;
-    font-size: 0.95rem;
-    padding: 0;
-    margin: 0;
-    color: #666;
+  text-align: left;
+  font-size: 0.95rem;
+  padding: 0;
+  margin: 0;
+  color: #666;
 }
 
-/* ======= EQUIPE - Adaptado para Carrossel ======= */
+/* ======= EQUIPE - Carrossel ======= */
 .equipe {
-    padding: 100px 60px;
-    background-color: #f0f8ff;
+  padding: 100px 60px;
+  background-color: #2a4a6a;
 }
 
 .equipe h2 {
-    color: #0E1B2C;
-    margin-bottom: 50px;
+  color: #ffffff;
+  margin-bottom: 50px;
 }
 
-/* Apenas container para o Carrossel (sem regras de layout) */
 .equipe-carousel {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .membro {
-    background: #fff
-    ;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    padding: 30px 20px;
-    width: 280px; 
-    transition: 0.3s;
-    border: 1px solid #eee;
-    margin: 10px; /* Adicionado margem para separação dos slides */
+  background: #fff; /* CORRIGIDO: Adicionado ponto-e-vírgula */
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 30px 20px;
+  width: 280px; 
+  transition: 0.3s;
+  border: 1px solid #eee;
+  margin: 10px;
 }
 
 .membro:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .membro img {
-    border-radius: 50%;
-    width: 140px; 
-    height: 140px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 4px solid #007AFF; 
+  border-radius: 50%;
+  width: 140px; 
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #007AFF; 
 }
 
 .membro h3 {
-    color: #222; 
-    margin-bottom: 5px;
-    font-size: 1.4rem;
+  color: #222; 
+  margin-bottom: 5px;
+  font-size: 1.4rem;
 }
 
 .membro p {
-    color: #007AFF; 
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0;
-    max-width: none;
+  color: #007AFF; 
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  max-width: none;
 }
 
-/* =================================== */
-/* SEÇÃO PARCEIROS (Novo) */
-/* =================================== */
+/* ======= PARCEIROS ======= */
 .parceiros {
-    padding: 100px 60px;
-    background-color: #0E1B2C; /* Fundo Azul Escuro (conforme imagem) */
+  padding: 100px 60px;
+  background-color: #1e3a5a;
 }
 
 .parceiros h2 {
-    color: white; /* Cor do título Branca */
-    margin-bottom: 50px;
+  color: white;
+  margin-bottom: 50px;
 }
 
 .parceiros-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; 
 }
 
 .parceiros-logo img {
-    max-width: 200px;
-    height: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  max-width: 200px;
+  height: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* =================================== */
-/* FOOTER (Adaptado) */
-/* =================================== */
+/* ======= FOOTER ======= */
 footer {
-    background-color: #f0f0f0; /* Fundo claro para o footer */
-    padding: 40px 60px 20px 60px;
-    text-align: center;
-    color: #444;
+  background-color: #2a4a6a;
+  padding: 40px 60px 20px 60px;
+  text-align: center;
+  color: #e0e0e0;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
 }
 
 .logo-footer {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #0E1B2C; 
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .logo-footer span {
-    color: #007AFF;
+  color: #007AFF;
 }
 
 .footer-contato {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .footer-contato a {
-    text-decoration: none;
-    color: #444;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
 }
 
 .footer-contato a:hover {
-    color: #007AFF;
+  color: #007AFF;
 }
 
 .footer-contato i {
-    font-size: 1.2rem;
-    margin-right: 8px;
-    color: #007AFF; /* Ícones em azul */
+  font-size: 1.2rem;
+  margin-right: 8px;
+  color: #007AFF;
 }
 
 .copyright {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-    color: #777;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #4a6a8a;
+  padding-top: 15px;
+  color: #b0b0b0;
 }
 
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .footer-contato {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer-contato {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /* ======= TECNOLOGIAS/STACKS ======= */
 .tecnologias {
-    padding: 100px 60px;
-    text-align: center;
-    background-color: #fff; /* Fundo branco e limpo após a seção equipe */
+  padding: 100px 60px;
+  text-align: center;
+  background-color: #1e3a5a;
 }
 
 .tecnologias h2 {
-    color: #0E1B2C;
+  color: #ffffff;
 }
 
 .tecnologias .subtitle {
-    margin-bottom: 50px;
-    font-size: 1.15rem;
-    color: #444;
+  margin-bottom: 50px;
+  font-size: 1.15rem;
+  color: #e0e0e0;
 }
 
 .tecnologias .tech-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px; /* Aumenta o espaço entre os logos */
-    max-width: 1000px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .tecnologias .tech-logo {
-    height: 50px; /* Aumenta um pouco o tamanho do logo */
-    transition: transform 0.3s, filter 0.3s;
-    filter: grayscale(10%); 
+  height: 50px;
+  transition: transform 0.3s, filter 0.3s;
+  filter: grayscale(10%); 
 }
 
 .tecnologias .tech-logo:hover {
-    transform: scale(1.15);
-    filter: grayscale(0%);
+  transform: scale(1.15);
+  filter: grayscale(0%);
 }
 
-
-
-/* ======= SEÇÃO SOBRE NÓS - MODIFICADA ======= */
+/* ======= SOBRE NÓS ======= */
 .sobre {
-    padding: 100px 80px; /* Aumenta o padding lateral */
+  padding: 100px 80px;
+  background-color: #2a4a6a;
 }
 
 .sobre h2 {
-    text-align: left; /* Título alinhado à esquerda, se o protótipo indicar */
-    margin-bottom: 50px;
-    font-size: 2.5rem;
-    color: #ffffff; /* Título em cor escura */
+  text-align: left;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  color: #ffffff;
 }
 
 .sobre-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .sobre-texto {
-    flex: 1; /* Ocupa uma parte do espaço */
+  flex: 1;
 }
 
 .sobre-texto p {
-    text-align: left; /* Alinha o texto à esquerda, como em um protótipo de duas colunas */
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 25px; /* Espaço entre parágrafos */
-    max-width: none; /* Remove a restrição de max-width que estava em 'section p' */
-    color: #ffffff;
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  max-width: none;
+  color: #ffffff;
 }
 
 .sobre-imagem {
-    flex: 1; /* Ocupa a outra parte do espaço */
-    max-width: 500px; /* Limita o tamanho da imagem */
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-imagem img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-/* Responsividade para a seção Sobre */
 @media (max-width: 900px) {
-    .sobre {
-        padding: 80px 40px;
-    }
-    .sobre-content {
-        flex-direction: column; 
-        gap: 40px;
-    }
-    
-    .sobre h2 {
-        text-align: center;
-    }
+  .sobre {
+    padding: 80px 40px;
+  }
+  
+  .sobre-content {
+    flex-direction: column; 
+    gap: 40px;
+  }
+  
+  .sobre h2 {
+    text-align: center;
+  }
 
-    .sobre-texto p {
-        text-align: center;
-    }
+  .sobre-texto p {
+    text-align: center;
+  }
 
-    .sobre-imagem {
-        order: -1;
-        max-width: 100%;
-    }
+  .sobre-imagem {
+    order: -1;
+    max-width: 100%;
+  }
 }
 
-/* =================================== */
-/* ESTILO E POSICIONAMENTO DAS SETAS SLICK */
-/* =================================== */
-
-/* Estilo geral das setas */
+/* ======= SETAS SLICK CAROUSEL ======= */
 .slick-prev:before, 
 .slick-next:before {
-    font-family: 'slick';
-    font-size: 30px; /* Aumenta o tamanho do ícone */
-    line-height: 1;
-    opacity: 0.75;
-    color: #0E1B2C; /* Cor das setas (Azul Escuro) */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: color 0.3s;
+  font-family: 'slick';
+  font-size: 30px;
+  line-height: 1;
+  opacity: 0.75;
+  color: #0E1B2C;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.3s;
 }
 
-/* Hover e Foco */
 .slick-prev:hover:before, 
 .slick-next:hover:before {
-    opacity: 1;
-    color: #007AFF; /* Cor de destaque ao passar o mouse */
+  opacity: 1;
+  color: #007AFF;
 }
 
-/* Posicionamento - Garante que as setas fiquem no centro vertical */
 .slick-prev, 
 .slick-next {
-    z-index: 10;
-    width: 40px;
-    height: 40px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
 }
 
-/* Seta Anterior */
 .slick-prev {
-    left: -20px; /* Ajuste para fora do carrossel */
+  left: -20px;
 }
 
-/* Seta Próxima */
 .slick-next {
-    right: -20px; /* Ajuste para fora do carrossel */
+  right: -20px;
 }
 
-/* Ajuste no mobile: esconde setas ou move para a borda */
 @media (max-width: 600px) {
-    .slick-prev,
-    .slick-next {
-        width: 30px;
-        height: 30px;
-    }
-    .slick-prev {
-        left: 0px; 
-    }
-    .slick-next {
-        right: 0px;
-    }
-    .slick-prev:before, 
-    .slick-next:before {
-        font-size: 20px;
-    }
+  .slick-prev,
+  .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .slick-prev {
+    left: 0px; 
+  }
+  
+  .slick-next {
+    right: 0px;
+  }
+  
+  .slick-prev:before, 
+  .slick-next:before {
+    font-size: 20px;
+  }
 }
