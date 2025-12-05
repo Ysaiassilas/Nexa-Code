@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+// ===================================
+// CORTINAS DE INTRODUÇÃO (Curtain Effect)
+// ===================================
+const leftCurtain = document.querySelector(".left-curtain");
+const rightCurtain = document.querySelector(".right-curtain");
+
+// Função para abrir as cortinas
+const openCurtains = () => {
+    // Adiciona a classe 'open' após 500ms (0.5 segundo) para garantir que tudo carregou
+    setTimeout(() => {
+        leftCurtain.classList.add("open");
+        rightCurtain.classList.add("open");
+        
+        // Remove a div completamente do fluxo após a animação (para garantir o clique)
+        setTimeout(() => {
+            const overlay = document.querySelector(".curtain-overlay");
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+        }, 2000); // 2000ms é a duração da transição no CSS
+        
+    }, 700); 
+};
+
+// Chama a função de abertura logo ao carregar a página
+openCurtains();
+
     // ===================================
     // HEADER SCROLL (Transparente -> Branco)
     // ===================================
@@ -68,17 +96,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===================================
     const adicionarMembrosEquipe = () => {
         const novosMembros = [
-            { nome: "João Victor", funcao: "Gerente de Projetos" },
-            { nome: "Lucyano Andrade", funcao: "Engenheiro DevOps" },
-            { nome: "Maria Clara Valadares", funcao: "Front-end Sênior" },
-            { nome: "Pedro Augusto", funcao: "Desenvolvedor Back-end" },
-            { nome: "Pedro Rómulo", funcao: "Analista de QA" },
-            { nome: "Ruan Carlos", funcao: "Especialista em Dados" },
-            { nome: "Samuel Henrique", funcao: "Marketing Digital" },
-            { nome: "Samuel Maia", funcao: "Suporte Técnico" },
-            { nome: "Sophia Martini", funcao: "Designer de Interação" },
-            { nome: "Victor Gabriel", funcao: "Estagiário de Programação" },
-            { nome: "Ysaias Silas", funcao: "Analista de Conteúdo" }
+            { nome: "João Victor", funcao: "Gerente de Projetos", imagem: "./imagens-turma/joao.jpg" },
+            { nome: "Lucyano Andrade", funcao: "Engenheiro DevOps", imagem: ".imagens-turma/" },
+            { nome: "Maria Clara Valadares", funcao: "Front-end Sênior", imagem: "./imagens-turma/" },
+            { nome: "Pedro Augusto", funcao: "Desenvolvedor Back-end", imagem: "./imagens-turma/PedroA.jpg" },
+            { nome: "Pedro Rómulo", funcao: "Analista de QA", imagem: "./imagens-turma/PedroR.jpg" },
+            { nome: "Ruan Carlos", funcao: "Especialista em Dados", imagem: "./imagens-turma/Rhuan.jpg" },
+            { nome: "Samuel Henrique", funcao: "Marketing Digital", imagem: "./imagens-turma/SamuelH.png" },
+            { nome: "Samuel Maia", funcao: "Suporte Técnico", imagem: "./imagens-turma/SamuelM.jpg" },
+            { nome: "Sophia Martini", funcao: "Designer de Interação", imagem: "./imagens-turma/Sophia.png" },
+            { nome: "Victor Gabriel", funcao: "Estagiário de Programação", imagem: "./imagens-turma/" },
+            { nome: "Ysaias Silas", funcao: "Analista de Conteúdo", imagem: "./imagens-turma/Ysaias.jpg" }
         ];
 
         const carouselContainer = document.querySelector('.equipe-carousel');
@@ -86,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         novosMembros.forEach(membro => {
             const membroHTML = `
                 <div class="membro">
-                    <img src="https://via.placeholder.com/150" alt="Foto de ${membro.nome}, ${membro.funcao}" width="150" height="150" loading="lazy" />
+                    <img src="${membro.imagem}" alt="Foto de ${membro.nome}, ${membro.funcao}" width="150" height="150" loading="lazy" />
                     <h3>${membro.nome}</h3>
                     <p>${membro.funcao}</p>
                 </div>

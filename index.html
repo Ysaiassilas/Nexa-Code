@@ -30,37 +30,56 @@
                 <li><a href="#sobre">Quem Somos</a></li> 
                 <li><a href="#portfolio">Projetos</a></li> 
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
+
+    <div class="curtain-overlay">
+        <div class="curtain left-curtain"></div>
+        <div class="curtain right-curtain"></div>
+    </div>
 
     <section class="hero">
         <div class="hero-content">
             <h1>Nexa<span>Code</span> transformará suas ideias em soluções digitais reais</h1>
             <p>Com uma equipe apaixonada por tecnologia, criamos sistemas e experiências únicas que conectam inovação e resultado.</p>
             <p>Desenvolvemos com propósito, unindo design, performance e estratégia para fazer sua empresa ir além.</p>
-            <a href="#contato" class="btn">Solicite um Orçamento</a>
+            
         </div>
     </section>
 
     <section id="sobre" class="sobre">
-        <h2>Quem Somos</h2>
+        <h2><span>Quem Somos</span></h2>
         <div class="sobre-content">
             <div class="sobre-texto">
                 <p>Somos uma startup focada em desenvolver soluções tecnológicas personalizadas para empresas que desejam se destacar no mercado digital. Nossa equipe combina expertise técnica e visão estratégica para entregar inovação de verdade.</p>
                 <p>Acreditamos que a tecnologia deve servir ao propósito. Por isso, cada projeto é desenvolvido com foco em performance, escalabilidade e, principalmente, no retorno que ele trará para o seu negócio.</p>
-                <a href="#contato" class="btn">Conheça nossa Metodologia</a>
+                
             </div>
             
             <div class="sobre-imagem">
                 <img src="turma.jpg" alt="Ilustração de estratégia e tecnologia" loading="lazy" width="500" height="350">
             </div>
         </div>
+
+        <div class="mvv-container">
+            <div class="mvv-card">
+                <h3><i class="fas fa-bullseye"></i> <span>M</span>issão</h3>
+                <p>Oferecer soluções digitais inovadoras, ágeis e de alta qualidade que maximizem o impacto e o crescimento de nossos clientes.</p>
+            </div>
+            <div class="mvv-card">
+                <h3><i class="fas fa-eye"></i> <span>V</span>isão</h3>
+                <p>Ser referência em desenvolvimento de software e consultoria em tecnologia, reconhecida pela excelência e inovação no mercado.</p>
+            </div>
+            <div class="mvv-card">
+                <h3><i class="fas fa-handshake"></i> <span>V</span>alores</h3>
+                <p>Inovação, transparência, excelência, trabalho em equipe e foco no resultado.</p>
+            </div>
+        </div>
     </section>
 
     <section id="servicos" class="servicos">
-        <h2>Nossas Soluções</h2>
+        <h2><span>Nossas Soluções</span></h2>
         <p class="subtitle">Descubra como a tecnologia pode impulsionar seus resultados. Oferecemos soluções completas para o seu desafio.</p>
         <div class="cards">
             <div class="card">
@@ -77,11 +96,18 @@
                 <h3>Aplicativos Mobile</h3>
                 <p>Apps intuitivos e de alto desempenho para as plataformas Android e iOS, entregando uma experiência nativa.</p>
             </div>
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                <h3>Desenvolvimento Desktop</h3>
+                <p>Apps intuitivos e de alto desempenho para as plataformas Android e iOS, entregando uma experiência nativa.</p>
+            </div>
         </div>
     </section>
     
     <section id="portfolio" class="portfolio">
-        <h2>Confira nossos projetos!</h2>
+        <h2><span>Confira Nossos Projetos</span></h2>
         <p class="subtitle">Confira alguns de nossos projetos mais recentes e veja a qualidade e o impacto de nossas soluções.</p>
         <div class="portfolio-carousel"> 
             <div class="projeto-card">
@@ -99,9 +125,9 @@
                 </div>
             </div>
             <div class="projeto-card">
-                <img src="https://via.placeholder.com/400x200" alt="Imagem do Projeto Sistema de Gestão" loading="lazy" width="400" height="200">
+                <img src="./imgens-projetos/nutri.jpg.png" alt="Imagem do Projeto Sistema de Gestão" loading="lazy" width="400" height="200">
                 <div class="card-info">
-                    <h4>Sistema de Gestão Empresarial (ERP)</h4>
+                    <h4>NutryFit</h4>
                     <p>Software para otimização de processos internos e gestão de recursos em tempo real.</p>
                 </div>
             </div>
@@ -117,7 +143,7 @@
     </section>
 
     <section id="equipe" class="equipe">
-        <h2>Nossa Equipe</h2>
+        <h2><span>Nossa Equipe</span></h2>
         <div class="equipe-carousel">
             <div class="membro">
                 <img src="https://via.placeholder.com/150" alt="Foto de Lucas Andrade, CEO e Fundador" width="150" height="150" loading="lazy" />
@@ -125,12 +151,12 @@
                 <p>CEO & Fundador</p>
             </div>
             <div class="membro">
-                <img src="https://via.placeholder.com/150" alt="Foto de Ana Souza, Desenvolvedora Full Stack" width="150" height="150" loading="lazy" />
+                <img src="./imagens-turma/Dani.jpg" alt="Foto de Ana Souza, Desenvolvedora Full Stack" width="150" height="150" loading="lazy" />
                 <h3>Danielle Chagas</h3>
                 <p>Desenvolvedora Full Stack</p>
             </div>
             <div class="membro">
-                <img src="https://via.placeholder.com/150" alt="Foto de Rafael Lima, Designer UX/UI" width="150" height="150" loading="lazy" />
+                <img src="./imagens-turma/Gaby.jpg" alt="Foto de Rafael Lima, Designer UX/UI" width="150" height="150" loading="lazy" />
                 <h3>Gabriely Mares</h3>
                 <p>Designer UX/UI</p>
             </div>
@@ -138,43 +164,63 @@
     </section>
     
     <section id="tecnologias" class="tecnologias">
-        <h2>Tecnologias que usamos</h2>
-        <p class="subtitle">Trabalhamos com as stacks mais modernas do mercado para garantir a qualidade e escalabilidade das suas soluções.</p>
-        <div class="tech-logos">
-            <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Logo" class="tech-logo" loading="lazy">
-            <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Logo" class="tech-logo" loading="lazy">
-            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Logo" class="tech-logo" loading="lazy">
-            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Logo" class="tech-logo" loading="lazy">
-            <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Logo" class="tech-logo" loading="lazy">
-        </div>
-    </section>
+    <h2><span>Tecnologias</span></h2>
+    <p class="subtitle">Trabalhamos com as stacks mais modernas do mercado para garantir a qualidade e escalabilidade das suas soluções.</p>
+
+    <div class="tech-logos">
+        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white" alt="Canva Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Scrum-6DB33F?style=for-the-badge&logo=scrumalliance&logoColor=white" alt="Scrum Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" alt="Trello Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/ClickUp-7B68EE?style=for-the-badge&logo=clickup&logoColor=white" alt="ClickUp Logo" class="tech-logo" loading="lazy">
+        <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord Logo" class="tech-logo" loading="lazy">
+
+    </div>
+</section>
 
    <section id="parceiros" class="parceiros">
-        <h2>Parceiros da NexaCode</h2>
+        <h2><span>Parceiros da NexaCode</span></h2>
         <div class="parceiros-logo">
-            <img src="logo-senac.jpg" 
-                 alt="Logo do Senac" 
-                 loading="lazy"
-                 width="200"
-                 height="200"
-            >
+            <a href="https://www.df.senac.br">
+                <img src="logo-senac.jpg" 
+                    alt="Logo do Senac" 
+                    loading="lazy"
+                    width="200"
+                    height="200"
+                 
+                >
+            </a>
         </div>
     </section>
 
     <footer>
         <div class="footer-content">
-            <div class="logo-footer">Nexa<span>Code</span></div>
-            <div class="footer-contato">
-                <a href="https://instagram.com/nexa_code" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="mailto:contato@nexacode.com">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="tel:00000000000">
-                    <i class="fas fa-phone"></i> (00) 0000-0000
-                </a>
-            </div>
+            <a href="index.html">
+                <div class="logo-footer">Nexa<span>Code</span></div>
+            </a>
+                <div class="footer-contato">
+                    <a href="https://instagram.com/nexa_code" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="mailto:contato@nexacode.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:v">
+                        <i class="fas fa-phone"></i> (62) 9952-7958
+                    </a>
+                </div>
         </div>
         <p class="copyright">© 2025 NexaCode - Todos os direitos reservados.</p>
     </footer>
