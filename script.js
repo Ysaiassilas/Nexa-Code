@@ -8,20 +8,19 @@ const rightCurtain = document.querySelector(".right-curtain");
 
 // Função para abrir as cortinas
 const openCurtains = () => {
-    // Adiciona a classe 'open' após 500ms (0.5 segundo) para garantir que tudo carregou
+    // Adiciona a classe 'open' após 700ms (0.7 segundo)
     setTimeout(() => {
         leftCurtain.classList.add("open");
         rightCurtain.classList.add("open");
-        
-        // Remove a div completamente do fluxo após a animação (para garantir o clique)
+
+        // Remove a div completamente do fluxo após a animação
         setTimeout(() => {
             const overlay = document.querySelector(".curtain-overlay");
             if (overlay) {
                 overlay.style.display = 'none';
             }
-        }, 2000); // 2000ms é a duração da transição no CSS
-        
-    }, 700); 
+        }, 2000); // Duração da transição no CSS
+    }, 700);
 };
 
 // Chama a função de abertura logo ao carregar a página
@@ -41,14 +40,14 @@ openCurtains();
     };
 
     window.addEventListener("scroll", handleHeaderScroll);
-    handleHeaderScroll(); 
+    handleHeaderScroll();
 
     // ===================================
     // ANIMAÇÃO DE SCROLL (Reveal)
     // ===================================
     const handleScrollAnimation = () => {
-        const elementos = document.querySelectorAll("section:not(.hero)"); 
-        const triggerPoint = window.innerHeight * 0.85; 
+        const elementos = document.querySelectorAll("section:not(.hero)");
+        const triggerPoint = window.innerHeight * 0.85;
 
         elementos.forEach(el => {
             const distancia = el.getBoundingClientRect().top;
@@ -57,9 +56,9 @@ openCurtains();
             }
         });
     };
-    
+
     window.addEventListener("scroll", handleScrollAnimation);
-    handleScrollAnimation(); 
+    handleScrollAnimation();
 
     // ===================================
     // MENU RESPONSIVO
@@ -80,19 +79,19 @@ openCurtains();
     document.querySelectorAll("nav a").forEach(link => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
-            
+
             if (menuToggle.classList.contains("active")) {
-                toggleMenu(); 
+                toggleMenu();
             }
 
-            // O scroll funciona para as novas seções
+            // Scroll suave para o destino
             const alvo = document.querySelector(link.getAttribute("href"));
             window.scrollTo({ top: alvo.offsetTop - 60, behavior: "smooth" });
         });
     });
 
     // ===================================
-    // INJEÇÃO DINÂMICA DOS MEMBROS DA EQUIPE (11 adicionais)
+    // INJEÇÃO DINÂMICA DOS MEMBROS DA EQUIPE
     // ===================================
     const adicionarMembrosEquipe = () => {
         const novosMembros = [
@@ -110,8 +109,12 @@ openCurtains();
         ];
 
         const carouselContainer = document.querySelector('.equipe-carousel');
+        const membrosIniciais = carouselContainer.querySelectorAll('.membro').length;
 
-        novosMembros.forEach(membro => {
+        novosMembros.forEach((membro, index) => {
+            // Garante que não duplique se o HTML inicial já existir
+            if (index >= membrosIniciais) return; 
+            
             const membroHTML = `
                 <div class="membro">
                     <img src="${membro.imagem}" alt="Foto de ${membro.nome}, ${membro.funcao}" width="150" height="150" loading="lazy" />
@@ -124,60 +127,58 @@ openCurtains();
     };
 
     // ===================================
-    // INJEÇÃO DINÂMICA DOS PROJETOS DO PORTFÓLIO (15 no total)
+    // INJEÇÃO DINÂMICA DOS PROJETOS DO PORTFÓLIO
     // ===================================
     const adicionarProjetosPortfolio = () => {
-    const projetos = [
-        // O campo 'link' agora é para onde o usuário será levado. 
-        // O novo campo 'imagem' aponta para o caminho do arquivo.
+        const projetos = [
+            { nome: "Estoque Fácil", descricao: "Marketplace robusto com foco em escalabilidade e UX de compra e venda.", link: "link-do-estoque-facil", imagem: "./imgens-projetos/Estoque-Facil.png" },
+            { nome: "Dieta Popular", descricao: "Desenvolvimento nativo com geolocalização e sistema de pagamento integrado.", link: "https://www.ifood.com.br", imagem: "./imgens-projetos/Dieta-popular.png" },
+            { nome: "Equilibra", descricao: "Software personalizado para otimização de processos internos e gestão de recursos.", link: "https://www.sap.com/brazil/products/erp.html", imagem: "./imgens-projetos/Equilibra.png" },
+            { nome: "ValidaAlimento", descricao: "Plataforma interna para comunicação e compartilhamento de documentos de grandes equipes.", link: "https://www.microsoft.com/pt-br/microsoft-365/sharepoint/collaboration", imagem: "./imgens-projetos/ValidaAlimento.png" },
+            { nome: "New Iformation", descricao: "Desenvolvimento de sistema para gestão de relacionamento com o cliente customizado.", link: "https://www.salesforce.com/br/", imagem: "./imgens-projetos/New-information.png" },
+            { nome: "Vitabery", descricao: "Criação de site focado em marca, SEO e geração de leads para uma grande empresa de tecnologia.", link: "https://www.google.com", imagem: "./imgens-projetos/Vitabery.png" },
+            { nome: "Sabium", descricao: "Ambiente virtual de aprendizagem com sistema de certificado, pagamento e gestão de conteúdo.", link: "https://www.udemy.com/", imagem: "./imgens-projetos/Sabium.png" },
+            { nome: "Pyxis tour Brasil", descricao: "App mobile nativo com integração GPS e gamificação para monitoramento de atividades físicas.", link: "https://www.strava.com/mobile", imagem: "./imgens-projetos/Pyxis.png" },
+            { nome: "Sistema Fintech", descricao: "Desenvolvimento de API e plataforma de gestão de pagamentos segura e de alta disponibilidade.", link: "https://www.nubank.com.br", imagem: "./imagens-projetos/sistema-fintech.jpg" },
+            { nome: "Landing Page SEO", descricao: "Página única desenvolvida com foco em velocidade e otimização para SEO.", link: "https://neilpatel.com/", imagem: "./imagens-projetos/landing-page.jpg" },
+            { nome: "Sistema B2B", descricao: "Plataforma para agendamento de serviços com integração de calendários e faturamento automatizado.", link: "https://www.booking.com", imagem: "./imagens-projetos/sistema-b2b.jpg" },
+        ];
 
-        // Exemplo 1: Mantive o caminho que você sugeriu inicialmente
-        { nome: "Estoque Fácil", descricao: "Marketplace robusto com foco em escalabilidade e UX de compra e venda.", link: "link-do-estoque-facil", imagem: "./imgens-projetos/Estoque-Facil.png" },
-        { nome: "Dieta Popular", descricao: "Desenvolvimento nativo com geolocalização e sistema de pagamento integrado.", link: "https://www.ifood.com.br", imagem: "./imgens-projetos/Dieta-popular.png" },
-        { nome: "Equilibra", descricao: "Software personalizado para otimização de processos internos e gestão de recursos.", link: "https://www.sap.com/brazil/products/erp.html", imagem: "./imgens-projetos/Equilibra.png" },
-        { nome: "ValidaAlimento", descricao: "Plataforma interna para comunicação e compartilhamento de documentos de grandes equipes.", link: "https://www.microsoft.com/pt-br/microsoft-365/sharepoint/collaboration", imagem: "./imgens-projetos/ValidaAlimento.png" },
-        { nome: "New Iformation", descricao: "Desenvolvimento de sistema para gestão de relacionamento com o cliente customizado.", link: "https://www.salesforce.com/br/", imagem: "./imgens-projetos/New-information.png" },
-        { nome: "Vitabery", descricao: "Criação de site focado em marca, SEO e geração de leads para uma grande empresa de tecnologia.", link: "https://www.google.com", imagem: "./imagens-projetos/vitabery.jpg" },
-        { nome: "Sabium", descricao: "Ambiente virtual de aprendizagem com sistema de certificado, pagamento e gestão de conteúdo.", link: "https://www.udemy.com/", imagem: "./imgens-projetos/Sabium.png" },
-        { nome: "Pyxis tour Brasil", descricao: "App mobile nativo com integração GPS e gamificação para monitoramento de atividades físicas.", link: "https://www.strava.com/mobile", imagem: "./imgens-projetos/Pyxis.png" },
-        { nome: "Sistema Fintech", descricao: "Desenvolvimento de API e plataforma de gestão de pagamentos segura e de alta disponibilidade.", link: "https://www.nubank.com.br", imagem: "./imagens-projetos/sistema-fintech.jpg" },
-        { nome: "Landing Page SEO", descricao: "Página única desenvolvida com foco em velocidade e otimização para SEO.", link: "https://neilpatel.com/", imagem: "./imagens-projetos/landing-page.jpg" },
-        { nome: "Sistema B2B", descricao: "Plataforma para agendamento de serviços com integração de calendários e faturamento automatizado.", link: "https://www.booking.com", imagem: "./imagens-projetos/sistema-b2b.jpg" },
-    ];
+        const carouselContainer = document.querySelector('.portfolio-carousel');
+        // Pula os 4 projetos iniciais já presentes no HTML
+        const projetosIniciais = 4; 
 
-    const carouselContainer = document.querySelector('.portfolio-carousel');
-
-    projetos.forEach(projeto => {
-        const projetoHTML = `
-            <div class="projeto-card">
-                <a href="${projeto.link}" target="_blank" rel="noopener noreferrer">
-                    <img src="${projeto.imagem}" 
-                         alt="Imagem do Projeto ${projeto.nome}" loading="lazy" width="400" height="200">
-                </a>
-                <div class="card-info">
-                    <h4><a href="${projeto.link}" target="_blank" rel="noopener noreferrer">${projeto.nome}</a></h4>
-                    <p>${projeto.descricao}</p>
+        projetos.forEach(projeto => {
+            const projetoHTML = `
+                <div class="projeto-card">
+                    <a href="${projeto.link}" target="_blank" rel="noopener noreferrer">
+                        <img src="${projeto.imagem}"
+                            alt="Imagem do Projeto ${projeto.nome}" loading="lazy" width="400" height="200">
+                    </a>
+                    <div class="card-info">
+                        <h4><a href="${projeto.link}" target="_blank" rel="noopener noreferrer">${projeto.nome}</a></h4>
+                        <p>${projeto.descricao}</p>
+                    </div>
                 </div>
-            </div>
-        `;
-        carouselContainer.insertAdjacentHTML('beforeend', projetoHTML);
-    });
-};
-    
+            `;
+            carouselContainer.insertAdjacentHTML('beforeend', projetoHTML);
+        });
+    };
+
     // CHAMA AS FUNÇÕES DE INJEÇÃO
     adicionarMembrosEquipe();
     adicionarProjetosPortfolio();
 
     // ===================================
-    // INICIALIZAÇÃO DOS CARROSSEIS (SLICK)
+    // INICIALIZAÇÃO DOS CARROSSEIS (SLICK) - RESPONSIVO
     // ===================================
 
-    // Inicialização do Carrossel de Portfólio (15 itens)
+    // Inicialização do Carrossel de Portfólio
     $('.portfolio-carousel').slick({
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3, 
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
@@ -187,15 +188,16 @@ openCurtains();
         ]
     });
 
-    // Inicialização do Carrossel da Equipe (14 itens)
+    // Inicialização do Carrossel da Equipe (Otimizado para até 4 slides em desktop)
     $('.equipe-carousel').slick({
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3, 
+        slidesToShow: 4, // Exibe 4 slides em telas grandes (desktop)
         slidesToScroll: 1,
         responsive: [
-            { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+            { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 1 } },
             { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } }
         ]
     });

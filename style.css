@@ -23,26 +23,26 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 9999; /* DEVE ser menor que o header */
-  pointer-events: none; 
+  z-index: 9999;
+  pointer-events: none;
   display: flex;
 }
 
 .curtain {
-  width: 50vw; /* Cada cortina ocupa metade da tela (50% da largura da viewport) */
+  width: 50vw;
   height: 100%;
-  background-color: #1e3a5a; /* Cor de fundo da sua seção hero */
+  background-color: #1e3a5a;
   position: relative;
-  transition: transform 1.5s ease-out; /* Transição de 1.5s para o efeito de abertura */
+  transition: transform 1.5s ease-out;
 }
 
 /* Estado Final (depois da animação): As cortinas saem da tela */
 .left-curtain.open {
-  transform: translateX(-100%); /* Move a cortina esquerda totalmente para fora */
+  transform: translateX(-100%);
 }
 
 .right-curtain.open {
-  transform: translateX(100%); /* Move a cortina direita totalmente para fora */
+  transform: translateX(100%);
 }
 
 /* ======= HEADER ======= */
@@ -51,13 +51,13 @@ header {
   top: 0;
   width: 100%;
   background-color: transparent;
-  color: white; 
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 80px; 
-  z-index: 10000; /* AUMENTADO: Garante que o header fique ACIMA da cortina (9999) */
-  box-shadow: none; 
+  padding: 25px 80px;
+  z-index: 10000;
+  box-shadow: none;
   transition: background 0.4s, padding 0.4s;
 }
 
@@ -66,7 +66,7 @@ header.scrolled {
   color: #222;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 15px 80px;
-  z-index: 10000; /* Mantenha o valor alto também aqui, se necessário */
+  z-index: 10000;
 }
 
 .logo {
@@ -77,23 +77,23 @@ header.scrolled {
 }
 
 header.scrolled .logo {
-  color: #140649; 
+  color: #140649;
 }
 
 .logo span {
-  color: #007AFF; 
+  color: #007AFF;
 }
 
-/* ======= MENU e RESPONSIVO ======= */
+/* ======= MENU e RESPONSIVO (Padrão e Toggle) ======= */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 40px; 
+  gap: 40px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: white; 
+  color: white;
   font-weight: 500;
   transition: color 0.3s;
 }
@@ -104,7 +104,7 @@ header.scrolled nav ul li a {
 
 nav ul li a:hover,
 header.scrolled nav ul li a:hover {
-  color: #007AFF; 
+  color: #007AFF;
 }
 
 .menu-toggle {
@@ -122,15 +122,16 @@ header.scrolled nav ul li a:hover {
 }
 
 header.scrolled .bar {
-  background-color: #222; 
+  background-color: #222;
 }
 
+/* Media Query do Menu de Navegação */
 @media (max-width: 768px) {
   nav {
     position: absolute;
     top: 70px;
     right: 0;
-    background: #0E1B2C; 
+    background: #0E1B2C;
     width: 200px;
     height: 0;
     overflow: hidden;
@@ -138,15 +139,15 @@ header.scrolled .bar {
   }
 
   nav.active {
-    height: auto; 
+    height: auto;
     padding-bottom: 10px;
   }
-  
-  .logo, 
+
+  .logo,
   .bar {
     color: white !important;
   }
-  
+
   header.scrolled .logo {
     color: white;
   }
@@ -156,7 +157,7 @@ header.scrolled .bar {
     align-items: center;
     padding-top: 20px;
   }
-  
+
   nav ul li a {
     color: white;
   }
@@ -188,18 +189,18 @@ header.scrolled .bar {
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  opacity: 1; /* CORRIGIDO: Hero sempre visível */
-  transform: translateY(0); /* CORRIGIDO: Hero sempre visível */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-content {
-  max-width: 900px; 
+  max-width: 900px;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem; 
-  margin-bottom: 40px; 
-  color: rgb(255, 255, 255); 
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  color: rgb(255, 255, 255);
   line-height: 1.2;
 }
 
@@ -208,14 +209,14 @@ header.scrolled .bar {
 }
 
 .hero-content p {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
   max-width: 750px;
-  margin: 20px auto; 
+  margin: 20px auto;
   line-height: 1.6;
 }
 
 /* ======= SEÇÕES (Geral) - OTIMIZADO ======= */
-section:not(.hero) { /* CORRIGIDO: Aplica opacity 0 apenas para sections que não são hero */
+section:not(.hero) {
   padding: 100px 60px;
   opacity: 0;
   transform: translateY(40px);
@@ -228,36 +229,36 @@ section.show {
 }
 
 section h2 {
-  display: flex; /* Habilita o Flexbox para alinhar itens */
-  align-items: center; /* Alinha os itens (texto e linhas) verticalmente */
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff;
-  font-size: 2.5rem; /* Ajustado para ter um tamanho maior */
-  margin: 0 auto 50px auto; /* Centraliza e define margem inferior */
-  max-width: 1200px; /* Limita a largura do h2 */
+  font-size: 2.5rem;
+  margin: 0 auto 50px auto;
+  max-width: 1200px;
 }
 
 section h2 span {
-  padding: 0 30px; /* Espaço entre o texto e a linha */
-  white-space: nowrap; /* Impede que o texto quebre a linha */
+  padding: 0 30px;
+  white-space: nowrap;
 }
 
 section h2::before {
   content: '';
-  flex-grow: 1; /* Permite que o pseudo-elemento cresça e preencha o espaço */
-  height: 2px; /* Espessura da linha */
+  flex-grow: 1;
+  height: 2px;
   background-color: white;
-  max-width: 400px; /* Limita o comprimento máximo da linha */
-  margin-right: 20px; /* Opcional: Ajuste fino para o espaçamento */
+  max-width: 400px;
+  margin-right: 20px;
 }
 
 section h2::after {
   content: '';
-  flex-grow: 1; /* Permite que o pseudo-elemento cresça e preencha o espaço */
-  height: 2px; /* Espessura da linha */
+  flex-grow: 1;
+  height: 2px;
   background-color: white;
-  max-width: 400px; /* Limita o comprimento máximo da linha */
-  margin-left: 20px; /* Opcional: Ajuste fino para o espaçamento */
+  max-width: 400px;
+  margin-left: 20px;
 }
 
 section p {
@@ -270,18 +271,18 @@ section p {
 
 /* ======= BOTÕES GERAIS ======= */
 .btn {
-  background-color: #007AFF; 
+  background-color: #007AFF;
   color: white;
   padding: 12px 30px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
-  display: inline-block; 
+  display: inline-block;
 }
 
 .btn:hover {
-  background-color: #005BC5; 
+  background-color: #005BC5;
   transform: scale(1.05);
 }
 
@@ -324,26 +325,26 @@ section p {
 }
 
 .card {
-  background: #fff; 
+  background: #fff;
   color: #222;
-  padding: 40px 30px; 
+  padding: 40px 30px;
   border-radius: 15px;
-  width: 330px; 
+  width: 330px;
   transition: 0.4s;
   text-align: center;
   border: 1px solid #ddd;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-  border-color: #007AFF; 
-  transform: translateY(-15px); 
+  border-color: #007AFF;
+  transform: translateY(-15px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
   font-size: 1.4rem;
-  color: #007AFF; 
+  color: #007AFF;
   margin-top: 15px;
   margin-bottom: 10px;
 }
@@ -387,8 +388,8 @@ section p {
 
 .portfolio-carousel {
   max-width: 1200px;
-  margin: 0 auto 50px auto; 
-  padding: 0 60px; 
+  margin: 0 auto 50px auto;
+  padding: 0 60px;
 }
 
 .portfolio .projeto-card {
@@ -396,7 +397,7 @@ section p {
   border-radius: 12px;
   overflow: hidden;
   height: 27rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   border: none;
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: left;
@@ -420,7 +421,7 @@ section p {
 }
 
 .portfolio .card-info h4 {
-  color: #007AFF; 
+  color: #007AFF;
   margin: 0 0 5px 0;
   font-size: 1.3rem;
 }
@@ -451,12 +452,12 @@ section p {
 }
 
 .membro {
-  background: #fff; /* CORRIGIDO: Adicionado ponto-e-vírgula */
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
   padding: 30px 20px;
-  width: 280px; 
+  width: 280px;
   transition: 0.3s;
   border: 1px solid #eee;
   margin: 10px;
@@ -467,25 +468,25 @@ section p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Ajuste da imagem (otimizado para centralizar) */
 .membro img {
-  
   border-radius: 50%;
-  width: 140px; 
+  width: 140px;
   height: 140px;
   object-fit: cover;
-  margin-bottom: 2rem;
-  margin-left: 6.5rem;
-  border: 4px solid #007AFF; 
+  margin: 0 auto 2rem auto; /* Centraliza a imagem */
+  display: block;
+  border: 4px solid #007AFF;
 }
 
 .membro h3 {
-  color: #222; 
+  color: #222;
   margin-bottom: 5px;
   font-size: 1.4rem;
 }
 
 .membro p {
-  color: #007AFF; 
+  color: #007AFF;
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
@@ -508,7 +509,7 @@ section p {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px; 
+  height: 150px;
 }
 
 .parceiros-logo img {
@@ -588,7 +589,7 @@ a {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .footer-contato {
     flex-direction: column;
     gap: 15px;
@@ -627,7 +628,7 @@ a {
 .tecnologias .tech-logo {
   height: 50px;
   transition: transform 0.3s, filter 0.3s;
-  filter: grayscale(10%); 
+  filter: grayscale(10%);
 }
 
 .tecnologias .tech-logo:hover {
@@ -635,7 +636,7 @@ a {
   filter: grayscale(0%);
 }
 
-/* ======= SOBRE NÓS ======= */
+/* ======= SOBRE NÓS E IMAGEM ======= */
 .sobre {
   padding: 100px 80px;
   background-color: #2a4a6a;
@@ -684,40 +685,39 @@ a {
   object-fit: cover;
 }
 
-
 /* ======= MISSÃO, VISÃO, VALORES (MVV) ======= */
 .mvv-container {
   display: flex;
   justify-content: center;
-  gap: 30px; /* Espaço entre os cartões */
-  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  gap: 30px;
+  flex-wrap: wrap;
   max-width: 1200px;
-  margin: 80px auto 0 auto; /* Margem superior para separar do conteúdo acima */
+  margin: 80px auto 0 auto;
   padding: 0 20px;
 }
 
 .mvv-card {
-  background-color: #1e3a5a; /* Fundo mais escuro que a seção, mas mais claro que o corpo */
+  background-color: #1e3a5a;
   color: #ffffff;
   padding: 40px;
   border-radius: 10px;
-  width: 350px; /* Largura fixa para cada cartão */
+  width: 350px;
   text-align: center;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, background-color 0.3s ease;
-  border-top: 5px solid #007AFF; /* Linha de destaque na cor primária */
+  border-top: 5px solid #007AFF;
 }
 
 .mvv-card:hover {
-  transform: translateY(-8px); /* Efeito de elevação ao passar o mouse */
-  background-color: #142a42; /* Leve escurecimento no hover */
+  transform: translateY(-8px);
+  background-color: #142a42;
 }
 
 .mvv-card h3 {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #007AFF; /* Cor primária para destaque */
+  color: #007AFF;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -726,7 +726,7 @@ a {
 .mvv-card h3 i {
   font-size: 2rem;
   margin-right: 15px;
-  color: #ffffff; /* Ícone em branco para contraste */
+  color: #ffffff;
 }
 
 .mvv-card h3 span {
@@ -736,38 +736,22 @@ a {
 .mvv-card p {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: #e0e0e0; /* Cor do texto para contraste */
-  text-align: center; /* Garante que o texto dentro do cartão seja centralizado */
-  max-width: none; /* Ignora o max-width do p global */
+  color: #e0e0e0;
+  text-align: center;
+  max-width: none;
 }
 
-@media (max-width: 1200px) {
-  .mvv-card {
-      width: 45%; /* Duas colunas em telas médias */
-  }
-}
-
-@media (max-width: 768px) {
-  .mvv-container {
-      margin-top: 40px;
-  }
-
-  .mvv-card {
-      width: 100%; /* Uma coluna em telas pequenas */
-      max-width: 400px; /* Limita a largura em telas muito pequenas */
-  }
-}
-
+/* Media Query para Seção SOBRE/MVV */
 @media (max-width: 900px) {
   .sobre {
     padding: 80px 40px;
   }
-  
+
   .sobre-content {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 40px;
   }
-  
+
   .sobre h2 {
     text-align: center;
   }
@@ -780,10 +764,25 @@ a {
     order: -1;
     max-width: 100%;
   }
+
+  .mvv-card {
+    width: 45%; /* Duas colunas em telas médias */
+  }
 }
 
-/* ======= SETAS SLICK CAROUSEL ======= */
-.slick-prev:before, 
+@media (max-width: 768px) {
+  .mvv-container {
+    margin-top: 40px;
+  }
+
+  .mvv-card {
+    width: 100%; /* Uma coluna em telas pequenas */
+    max-width: 400px;
+  }
+}
+
+/* ======= SETAS SLICK CAROUSEL (Padrão) ======= */
+.slick-prev:before,
 .slick-next:before {
   font-family: 'slick';
   font-size: 30px;
@@ -795,13 +794,13 @@ a {
   transition: color 0.3s;
 }
 
-.slick-prev:hover:before, 
+.slick-prev:hover:before,
 .slick-next:hover:before {
   opacity: 1;
   color: #007AFF;
 }
 
-.slick-prev, 
+.slick-prev,
 .slick-next {
   z-index: 10;
   width: 40px;
@@ -816,23 +815,147 @@ a {
   right: -20px;
 }
 
+/* =============================== */
+/* 📱 MEDIA QUERIES PARA RESPONSIVIDADE (ADAPTADAS) */
+/* =============================== */
+
+/* Para Telas Médias e Tablets (Largura máxima de 992px) */
+@media (max-width: 992px) {
+
+    /* Header */
+    header {
+        padding: 15px 40px;
+    }
+
+    header.scrolled {
+        padding: 15px 40px;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    /* Seções (Geral) */
+    section:not(.hero) {
+        padding: 80px 40px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    /* Reduz o comprimento das linhas laterais do H2 */
+    section h2::before,
+    section h2::after {
+        max-width: 150px;
+    }
+    
+    /* Serviços */
+    .servicos .cards {
+        gap: 20px;
+    }
+
+    .card {
+        width: 45%; /* Permite 2 cards por linha */
+    }
+
+    /* Tecnologias */
+    .tecnologias .tech-logos {
+        gap: 30px;
+    }
+}
+
+/* Para Celulares (Largura máxima de 600px) */
 @media (max-width: 600px) {
-  .slick-prev,
-  .slick-next {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .slick-prev {
-    left: 0px; 
-  }
-  
-  .slick-next {
-    right: 0px;
-  }
-  
-  .slick-prev:before, 
-  .slick-next:before {
-    font-size: 20px;
-  }
+    /* Header e Nav */
+    header {
+        padding: 10px 20px;
+    }
+
+    header.scrolled {
+        padding: 10px 20px;
+    }
+    
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Seções (Geral) */
+    section:not(.hero) {
+        padding: 60px 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    section h2 span {
+        padding: 0 15px;
+    }
+
+    /* Remove as linhas laterais do H2 em telas muito pequenas */
+    section h2::before,
+    section h2::after {
+        content: none;
+    }
+
+    /* Serviços */
+    .card {
+        width: 100%; /* 1 card por linha */
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    /* Carrossel Slick */
+    .slick-prev,
+    .slick-next {
+        width: 30px;
+        height: 30px;
+    }
+
+    .slick-prev {
+        left: 5px;
+    }
+
+    .slick-next {
+        right: 5px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 20px;
+    }
+
+    .portfolio-carousel {
+        padding: 0 20px;
+    }
+
+    .portfolio .projeto-card {
+        margin: 10px 5px;
+        height: auto; /* Permite que o card se ajuste ao conteúdo em telas pequenas */
+    }
+
+    /* Tecnologias */
+    .tecnologias .tech-logo {
+        height: 40px;
+        gap: 20px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 20px 15px 20px;
+    }
 }
