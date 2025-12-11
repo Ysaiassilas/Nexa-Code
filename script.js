@@ -96,17 +96,17 @@ openCurtains();
     // ===================================
     const adicionarMembrosEquipe = () => {
         const novosMembros = [
-            { nome: "João Victor", funcao: "Gerente de Projetos", imagem: "./imagens-turma/joao.jpg" },
-            { nome: "Lucyano Andrade", funcao: "Engenheiro DevOps", imagem: ".imagens-turma/" },
-            { nome: "Maria Clara Valadares", funcao: "Front-end Sênior", imagem: "./imagens-turma/" },
-            { nome: "Pedro Augusto", funcao: "Desenvolvedor Back-end", imagem: "./imagens-turma/PedroA.jpg" },
-            { nome: "Pedro Rómulo", funcao: "Analista de QA", imagem: "./imagens-turma/PedroR.jpg" },
-            { nome: "Ruan Carlos", funcao: "Especialista em Dados", imagem: "./imagens-turma/Rhuan.jpg" },
-            { nome: "Samuel Henrique", funcao: "Marketing Digital", imagem: "./imagens-turma/SamuelH.png" },
-            { nome: "Samuel Maia", funcao: "Suporte Técnico", imagem: "./imagens-turma/SamuelM.jpg" },
-            { nome: "Sophia Martini", funcao: "Designer de Interação", imagem: "./imagens-turma/Sophia.png" },
-            { nome: "Victor Gabriel", funcao: "Estagiário de Programação", imagem: "./imagens-turma/" },
-            { nome: "Ysaias Silas", funcao: "Analista de Conteúdo", imagem: "./imagens-turma/Ysaias.jpg" }
+            { nome: "João Victor", funcao: "Dev Full-Stack", imagem: "./imagens-turma/joao.jpg" },
+            { nome: "Lucyano Andrade", funcao: "Dev Front-end", imagem: "./imagens-turma/Lucyano.png" },
+            { nome: "Maria Clara Valadares", funcao: "Analista de Requisitos", imagem: "./imagens-turma/Maria.png" },
+            { nome: "Pedro Augusto", funcao: "Dev Full-Stack", imagem: "./imagens-turma/PedroA.jpg" },
+            { nome: "Pedro Rómulo", funcao: "Dev Full-Stack", imagem: "./imagens-turma/PedroR.jpg" },
+            { nome: "Ruan Carlos", funcao: "Dev Front-end", imagem: "./imagens-turma/Rhuan.jpg" },
+            { nome: "Samuel Henrique", funcao: "Dev Full-Stack", imagem: "./imagens-turma/SamuelH.png" },
+            { nome: "Samuel Maia", funcao: "Dev Front-end", imagem: "./imagens-turma/SamuelM.jpg" },
+            { nome: "Sophia Martini", funcao: "Dev Full-Stack", imagem: "./imagens-turma/Sophia.png" },
+            { nome: "Victor Gabriel", funcao: "Dev Front-end", imagem: "./imagens-turma/Victor.png" },
+            { nome: "Ysaias Silas", funcao: "Dev Front-end", imagem: "./imagens-turma/Ysaias.jpg" }
         ];
 
         const carouselContainer = document.querySelector('.equipe-carousel');
@@ -127,39 +127,42 @@ openCurtains();
     // INJEÇÃO DINÂMICA DOS PROJETOS DO PORTFÓLIO (15 no total)
     // ===================================
     const adicionarProjetosPortfolio = () => {
-        const projetos = [
-            { nome: "E-commerce Mestre", descricao: "Marketplace robusto com foco em escalabilidade e UX de compra e venda.", link: "./imagens-projetos/HR-system.png" },
-            { nome: "App On-Demand", descricao: "Desenvolvimento nativo com geolocalização e sistema de pagamento integrado.", link: "https://www.ifood.com.br" },
-            { nome: "Sistema ERP", descricao: "Software personalizado para otimização de processos internos e gestão de recursos.", link: "https://www.sap.com/brazil/products/erp.html" },
-            { nome: "Portal Corporativo", descricao: "Plataforma interna para comunicação e compartilhamento de documentos de grandes equipes.", link: "https://www.microsoft.com/pt-br/microsoft-365/sharepoint/collaboration" },
-            { nome: "CRM Exclusivo", descricao: "Desenvolvimento de sistema para gestão de relacionamento com o cliente customizado.", link: "https://www.salesforce.com/br/" },
-            { nome: "Website Institucional", descricao: "Criação de site focado em marca, SEO e geração de leads para uma grande empresa de tecnologia.", link: "https://www.google.com" },
-            { nome: "Plataforma EAD", descricao: "Ambiente virtual de aprendizagem com sistema de certificado, pagamento e gestão de conteúdo.", link: "https://www.udemy.com/" },
-            { nome: "App Fitness Tracker", descricao: "App mobile nativo com integração GPS e gamificação para monitoramento de atividades físicas.", link: "https://www.strava.com/mobile" },
-            { nome: "Sistema Fintech", descricao: "Desenvolvimento de API e plataforma de gestão de pagamentos segura e de alta disponibilidade.", link: "https://www.nubank.com.br" },
-            { nome: "Landing Page SEO", descricao: "Página única desenvolvida com foco em velocidade e otimização para SEO.", link: "https://neilpatel.com/" },
-            { nome: "Sistema B2B", descricao: "Plataforma para agendamento de serviços com integração de calendários e faturamento automatizado.", link: "https://www.booking.com" },
-        ];
+    const projetos = [
+        // O campo 'link' agora é para onde o usuário será levado. 
+        // O novo campo 'imagem' aponta para o caminho do arquivo.
 
-        const carouselContainer = document.querySelector('.portfolio-carousel');
+        // Exemplo 1: Mantive o caminho que você sugeriu inicialmente
+        { nome: "Estoque Fácil", descricao: "Marketplace robusto com foco em escalabilidade e UX de compra e venda.", link: "link-do-estoque-facil", imagem: "./imgens-projetos/Estoque-Facil.png" },
+        { nome: "Dieta Popular", descricao: "Desenvolvimento nativo com geolocalização e sistema de pagamento integrado.", link: "https://www.ifood.com.br", imagem: "./imgens-projetos/Dieta-popular.png" },
+        { nome: "Equilibra", descricao: "Software personalizado para otimização de processos internos e gestão de recursos.", link: "https://www.sap.com/brazil/products/erp.html", imagem: "./imgens-projetos/Equilibra.png" },
+        { nome: "ValidaAlimento", descricao: "Plataforma interna para comunicação e compartilhamento de documentos de grandes equipes.", link: "https://www.microsoft.com/pt-br/microsoft-365/sharepoint/collaboration", imagem: "./imgens-projetos/ValidaAlimento.png" },
+        { nome: "New Iformation", descricao: "Desenvolvimento de sistema para gestão de relacionamento com o cliente customizado.", link: "https://www.salesforce.com/br/", imagem: "./imgens-projetos/New-information.png" },
+        { nome: "Vitabery", descricao: "Criação de site focado em marca, SEO e geração de leads para uma grande empresa de tecnologia.", link: "https://www.google.com", imagem: "./imagens-projetos/vitabery.jpg" },
+        { nome: "Sabium", descricao: "Ambiente virtual de aprendizagem com sistema de certificado, pagamento e gestão de conteúdo.", link: "https://www.udemy.com/", imagem: "./imgens-projetos/Sabium.png" },
+        { nome: "Pyxis tour Brasil", descricao: "App mobile nativo com integração GPS e gamificação para monitoramento de atividades físicas.", link: "https://www.strava.com/mobile", imagem: "./imgens-projetos/Pyxis.png" },
+        { nome: "Sistema Fintech", descricao: "Desenvolvimento de API e plataforma de gestão de pagamentos segura e de alta disponibilidade.", link: "https://www.nubank.com.br", imagem: "./imagens-projetos/sistema-fintech.jpg" },
+        { nome: "Landing Page SEO", descricao: "Página única desenvolvida com foco em velocidade e otimização para SEO.", link: "https://neilpatel.com/", imagem: "./imagens-projetos/landing-page.jpg" },
+        { nome: "Sistema B2B", descricao: "Plataforma para agendamento de serviços com integração de calendários e faturamento automatizado.", link: "https://www.booking.com", imagem: "./imagens-projetos/sistema-b2b.jpg" },
+    ];
 
-        projetos.forEach(projeto => {
-            const encodedName = encodeURIComponent(projeto.nome); 
-            const projetoHTML = `
-                <div class="projeto-card">
-                    <a href="${projeto.link}" target="_blank" rel="noopener noreferrer">
-                        <img src="https://via.placeholder.com/400x200/808080/FFFFFF?text=${encodedName}" 
-                            alt="Imagem do Projeto ${projeto.nome}" loading="lazy" width="400" height="200">
-                    </a>
-                    <div class="card-info">
-                        <h4><a href="${projeto.link}" target="_blank" rel="noopener noreferrer">${projeto.nome}</a></h4>
-                        <p>${projeto.descricao}</p>
-                    </div>
+    const carouselContainer = document.querySelector('.portfolio-carousel');
+
+    projetos.forEach(projeto => {
+        const projetoHTML = `
+            <div class="projeto-card">
+                <a href="${projeto.link}" target="_blank" rel="noopener noreferrer">
+                    <img src="${projeto.imagem}" 
+                         alt="Imagem do Projeto ${projeto.nome}" loading="lazy" width="400" height="200">
+                </a>
+                <div class="card-info">
+                    <h4><a href="${projeto.link}" target="_blank" rel="noopener noreferrer">${projeto.nome}</a></h4>
+                    <p>${projeto.descricao}</p>
                 </div>
-            `;
-            carouselContainer.insertAdjacentHTML('beforeend', projetoHTML);
-        });
-    };
+            </div>
+        `;
+        carouselContainer.insertAdjacentHTML('beforeend', projetoHTML);
+    });
+};
     
     // CHAMA AS FUNÇÕES DE INJEÇÃO
     adicionarMembrosEquipe();
