@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { nome: "Kelly Bispo", funcao: "CEO & Fundadora", imagem: "./imagens-turma/Kelly.png" },
             { nome: "Danielle Chagas", funcao: "Analista de Requisitos", imagem: "./imagens-turma/Dani.jpg" },
             { nome: "Gabriely Mares", funcao: "Analista de Requisitos", imagem: "./imagens-turma/Gaby.jpg" },
-            { nome: "João Victor", funcao: "Dev Full-Stack", imagem: "./imagens-turma/joao.png" },
+            { nome: "João Victor", funcao: "Dev Full-Stack", imagem: "./imagens-turma/joao.jpg" },
             { nome: "Lucyano Andrade", funcao: "Dev Front-end", imagem: "./imagens-turma/Lucyano.png" },
             { nome: "Maria Clara Valadares", funcao: "Analista de Requisitos", imagem: "./imagens-turma/Maria.png" },
             { nome: "Pedro Augusto", funcao: "Dev Full-Stack", imagem: "./imagens-turma/PedroA.jpg" },
@@ -139,20 +139,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const adicionarProjetosPortfolio = () => {
         
         const projetos = [
-            { nome: "HR System ", descricao: "Sistema desenvolvido pra uma empresa de RH que tem como objetivo mostrar vagas de emprego onde o candidato consegue ver o cargo e o salario que estão disponiveis para a vaga que ele está se candidatando.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/HR-system.png" },
-            { nome: "Saborear+", descricao: "Uma Home-Paige criada para uma turma de gastronimia sobre o seu projeto final como conclusão do curso .", link: "https://projeto-casamento-tau.vercel.app/#Montagem", imagem: "./imgens-projetos/Saborear+.png" },
-            { nome: "Agendamento de Auditório", descricao: "Sistema que ira ajudar na logistica do Senac em relação ao agendamento do auditório.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/Senac.png" },
-            { nome: "NutyFit", descricao: "Sistema feito para uma turma de nutrição como parte do nosso aprendizado.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/NutryFit.png" },
-            { nome: "Passe Leve", descricao: "Sistema feito para uma turma de nutrição como parte do nosso aprendizado.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/Passe-leve.png" },
-            { nome: "Estoque Fácil", descricao: "Um sitema dedicado ao gerenciamento no estoque de produtos.", link: "link-do-estoque-facil", imagem: "./imgens-projetos/Estoque-Facil.png" },
-            { nome: "Dieta Popular", descricao: "Sistema feito para uma turma de nutrição como parte do nosso aprendizado.", link: "https://www.ifood.com.br", imagem: "./imgens-projetos/Dieta-popular.png" },
-            { nome: "Equilibra", descricao: "Sistema feito para uma turma de nutrição como parte do nosso aprendizado.", link: "https://www.sap.com/brazil/products/erp.html", imagem: "./imgens-projetos/Equilibra.png" },
-            { nome: "ValidaAlimento", descricao: "Sistema feito para uma turma de nutrição como parte do nosso aprendizado.", link: "https://www.microsoft.com/pt-br/microsoft-365/sharepoint/collaboration", imagem: "./imgens-projetos/ValidaAlimento.png" },
-            { nome: "New Iformation", descricao: "Sistema feito com o intuito de ser uma forma de aprendizagem diversificada.", link: "https://www.salesforce.com/br/", imagem: "./imgens-projetos/New-information.png" },
-            { nome: "Vitabery", descricao: "Sistema feito pra uma industria de açai.", link: "https://www.google.com", imagem: "./imgens-projetos/Vitabery.png" },
-            { nome: "Sabium", descricao: "Ambiente virtual de aprendizagem com sistema de certificado, pagamento e gestão de conteúdo.", link: "https://www.udemy.com/", imagem: "./imgens-projetos/Sabium.png" },
+            { nome: "HR System ", descricao: "Sistema desenvolvido pra uma empresa de RH que tem como objetivo mostrar vagas de emprego onde o candidato consegue ver o cargo e o salário que estão disponíveis para a vaga que ele está se candidatando.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/HR-system.png" },
+            { nome: "Saborear+", descricao: "Uma homepage criada para uma turma de gastronomia sobre o seu PI (Projeto Integrador), que mostra o esforço e dedicação de cada membro da equipe, representada em um lindo banquete.", link: "https://projeto-casamento-tau.vercel.app/#Montagem", imagem: "./imgens-projetos/Saborear+.png" },
+            { nome: "Agendamento de Reserva Auditório", descricao: "Sistema que irá ajudar na logística do Senac em relação ao agendamento da reserva do auditório.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/Senac.png" },
+            { nome: "NutryFit", descricao: "Um software que permite a análise do estado nutricional de pacientes com base em informações como IMC, idade, altura,peso, percentual de gordura e outras métricas.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/NutryFit.png" },
+            { nome: "Passe Leve", descricao: "Uma aplicação que ajuda a criar cardápios semanais balanceados, levando em consideração restrições alimentares, preferências e preferências dos clientes.", link: "https://projetonutry.vercel.app/index.html", imagem: "./imgens-projetos/Passe-leve.png" },
+            { nome: "Estoque Fácil", descricao: "Um programa que gerencia o estoque de alimentos em cozinhas industriais, escolas, hospitais e restaurantes, com alertas para vencimento de produtos e sugestões de propostas.", link: "https://vick-g.github.io/EstoqueFacil/", imagem: "./imgens-projetos/Estoque-Facil.png" },
+            { nome: "Dieta Popular", descricao: "Um software voltado para atletas e praticantes de atividades físicas, que calcula necessidades energéticas e sugere refeições conforme os objetivos (hipertrofia, emagrecimento, etc.).", link: "https://www.ifood.com.br", imagem: "./imgens-projetos/Dieta-popular.png" },
+            { nome: "Equilibra", descricao: "Um sistema em que os usuários inserem os alimentos consumidos ao longo do dia, recebendo feedback sobre a qualidade da alimentação e sugestões para uma dieta balanceada.", link: "https://www.sap.com/brazil/products/erp.html", imagem: "./imgens-projetos/Equilibra.png" },
+            { nome: "ValidaAlimento", descricao: "Um programa que verifica a qualidade e validade dos alimentos disponíveis em uma instituição, melhorando por opções mais saudáveis ​​e balanceadas.", link: "https://valida-alimento.vercel.app/", imagem: "./imgens-projetos/ValidaAlimento.png" },
+            { nome: "New Iformation", descricao: "Site feito com o intuito de ser uma ferramenta de aprendizagem diversificada, onde não apenas alunos, mas também professores podem utilizá-la, seja para aprender, revisar ou até mesmo aprimorar o seu conhecimento em uma área específica.", link: "https://www.salesforce.com/br/", imagem: "./imgens-projetos/New-information.png" },
+            { nome: "Vitabery", descricao: "sistema feito pra uma industria de açai.", link: "https://www.google.com", imagem: "./imgens-projetos/Vitabery.png" },
+            { nome: "Sabium", descricao: "Ambiente Virtual de Aprendizagem de conteúdo escolar, vestibular e de concursos, com sistemas de certificação, pagamento e gestão de conteúdo.", link: "https://www.udemy.com/", imagem: "./imgens-projetos/Sabium.png" },
             { nome: "Pyxis tour Brasil", descricao: "Sistema feito para uma agencia de viagens.", link: "https://www.strava.com/mobile", imagem: "./imgens-projetos/Pyxis.png" },
-            { nome: "Beleza Suave", descricao: "Desenvolvimento de API e plataforma de gestão de pagamentos segura e de alta disponibilidade.", link: "https://peu-f.github.io/SalaoBelezaSuave/", imagem: "./imgens-projetos/Beleza-suave.png" },
+            { nome: "Beleza Suave", descricao: "Aplicação que facilita o agendamento de serviços de salão de beleza. A aplicação reduz o esforço para marcar serviços no salão, evitando ligações telefônicas ou descolamentos desnecessários.", link: "https://peu-f.github.io/SalaoBelezaSuave/", imagem: "./imgens-projetos/Beleza-suave.png" },
         ];
 
         const carouselContainer = document.querySelector('.portfolio-carousel');
