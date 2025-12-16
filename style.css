@@ -8,6 +8,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* 🟢 CORREÇÃO: Adiciona padding para compensar a altura do header fixo na navegação */
+    scroll-padding-top: 120px; 
 }
 
 body {
@@ -77,7 +79,8 @@ header.scrolled {
 }
 
 header.scrolled .logo {
-    color: #140649;
+    /* Cor escura para contrastar com o fundo branco do header rolado */
+    color: #140649; 
 }
 
 .logo span {
@@ -127,6 +130,27 @@ header.scrolled .bar {
 
 /* Media Query do Menu de Navegação */
 @media (max-width: 768px) {
+    
+    /* 🟢 CORREÇÃO LAYOUT HEADER: Ajusta o padding e o logo para caber na tela */
+    header {
+        padding: 15px 20px; 
+    }
+
+    header.scrolled {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte */
+        color: white; 
+    }
+    
+    header.scrolled .logo { 
+        color: #140649; 
+    }
+    
+    /* Fim da Correção Layout Header */
+
     nav {
         position: absolute;
         top: 70px;
@@ -143,13 +167,12 @@ header.scrolled .bar {
         padding-bottom: 10px;
     }
 
-    .logo,
     .bar {
-        color: white !important;
+        background-color: rgb(0, 0, 0) !important; 
     }
-
-    header.scrolled .logo {
-        color: white;
+    
+    header.scrolled .bar {
+        background-color: #222; 
     }
 
     nav ul {
@@ -159,26 +182,16 @@ header.scrolled .bar {
     }
 
     nav ul li a {
-        color: white;
+        color: white; 
     }
 
     .menu-toggle {
         display: flex;
     }
 
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
+    /* ❌ REGRAS DE ANIMAÇÃO DO 'X' REMOVIDAS: O ícone Hamburger permanece fixo. */
 
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
 }
-
 /* ======= HERO - CORRIGIDO: Sempre visível ======= */
 .hero {
     height: 100vh;
@@ -767,6 +780,7 @@ a {
 
     .mvv-card {
         width: 45%; 
+        min-width: 300px;
     }
 }
 
@@ -885,7 +899,7 @@ a {
 @media (max-width: 600px) {
     /* Header e Nav */
     header {
-        padding: 10px 20px;
+        padding: 15px 20px;
     }
 
     header.scrolled {
@@ -908,12 +922,15 @@ a {
     }
 
     section h2 {
+        /* 🟢 CORREÇÃO: Título menor para evitar corte */
         font-size: 1.5rem;
         margin-bottom: 30px;
+        padding: 0; /* Remove padding horizontal */
     }
 
     section h2 span {
-        padding: 0 15px;
+        /* 🟢 CORREÇÃO: Reduz o padding interno para liberar espaço para o texto */
+        padding: 0 5px; 
     }
 
     /* Remove as linhas laterais do H2 em telas muito pequenas */
@@ -954,8 +971,14 @@ a {
         font-size: 20px;
     }
 
+    .portfolio {
+        /* 🟢 CORREÇÃO: Garante padding lateral estreito para a seção Portfólio */
+        padding: 60px 20px;
+    }
+
     .portfolio-carousel {
-        padding: 0 20px;
+        /* Reduz o padding lateral para telas muito pequenas */
+        padding: 0 5px; 
     }
 
     .portfolio .projeto-card {
@@ -963,13 +986,19 @@ a {
         height: auto; 
     }
     
+    /* Parceiros */
+    .parceiros {
+        /* 🟢 CORREÇÃO: Garante padding lateral estreito para a seção Parceiros */
+        padding: 60px 20px; 
+    }
+    
     /* Tecnologias */
     .tecnologias .tech-logos {
-        gap: 20px;
+        gap: 15px; 
     }
 
     .tecnologias .tech-logo {
-        height: 40px;
+        height: 35px;
     }
     
     /* Footer */
